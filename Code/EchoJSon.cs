@@ -10,43 +10,82 @@ namespace EchoRequest.Code
 	{
 		protected override void OnInit(EventArgs e)
 		{
-			Response.ContentType = "application/json";
+			ProcessRequest(Response, Request);
+			//Response.ContentType = "application/json";
 
+			//Response.Write("{");
+			//ProcessNvc("headers", Request.Headers);
 
-			Response.Write("{");
-			ProcessNvc("queryString", Request.QueryString);
+			////Response.Write(", ");
+			////ProcessNvc("cookies", Request.Cookies);
 
-			Response.Write(", ");
-			ProcessFiles("files", Request.Files);
+			//Response.Write(", ");
+			//ProcessNvc("queryString", Request.QueryString);
 
-			Response.Write("}");
+			//Response.Write(", ");
+			//ProcessNvc("form", Request.Form);
 
-			Context.Response.End();
+			////Response.Write(", ");
+			////ProcessNvc("serverVariables", Request.ServerVariables);
+
+			//Response.Write(", ");
+			//ProcessFiles("files", Request.Files);
+
+			//Response.Write("}");
+
+			//Context.Response.End();
 		}
-		private void OpenJson(string name)
+		public static void ProcessRequest(HttpResponse response, HttpRequest request)
+		{
+			response.ContentType = "application/json";
+
+			response.Write("{");
+			ProcessNvc(response, "headers", request.Headers);
+
+			//Response.Write(", ");
+			//ProcessNvc("cookies", Request.Cookies);
+
+			WriteSeparator(response);
+			ProcessNvc(response, "queryString", request.QueryString);
+
+			WriteSeparator(response);
+			ProcessNvc(response, "form", request.Form);
+
+			WriteSeparator(response);
+			ProcessFiles(response, "files", request.Files);
+
+			response.Write("}");
+
+			response.End();
+		}
+		public static void WriteSeparator(HttpResponse response)
+		{
+			response.Write(", " + Environment.NewLine);
+		}
+		private static void OpenJson(HttpResponse response, string name)
 		{
 			string json = string.Format("\"{0}\": {{", name);
-			Response.Write(json);
+			response.Write(json);
 		}
-		private void CloseJson()
+		private static void CloseJson(HttpResponse response)
 		{
-			Response.Write("}");
+			response.Write("}");
 		}
-		private void ProcessNvc(string name, NameValueCollection nvc)
+		private static void ProcessNvc(HttpResponse response, string name, NameValueCollection nvc)
 		{
-			OpenJson(name);
+			OpenJson(response, name);
 			string comma = string.Empty;
 			foreach (string key in nvc.AllKeys)
 			{
 				string json = string.Format("{0}\"{1}\": \"{2}\"", comma, key, nvc[key]);
 				comma = ", ";
-				Response.Write(json);
+				response.Write(json);
 			}
-			CloseJson();
+			CloseJson(response);
 		}
-		private void ProcessFiles(string name, HttpFileCollection files)
+		private static void ProcessFiles(HttpResponse response, string name, HttpFileCollection files)
 		{
-			OpenJson(name);
+			OpenJson(response, name);
 			string comma = string.Empty;
 			foreach (string key in files.AllKeys)
 			{
@@ -56,8 +95,9 @@ namespace EchoRequest.Code
 				string base64 = Convert.ToBase64String(bytes);
 				string json = string.Format("{0}\"{1}\": \"{2}\"", comma, key, base64);
 				comma = ", ";
+				response.Write(json);
 			}
-			CloseJson();
+			CloseJson(response);
 		}
 	}
 }
