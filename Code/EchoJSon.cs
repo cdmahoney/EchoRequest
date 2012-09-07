@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.Web;
 using System.Web.UI;
 
@@ -116,27 +118,34 @@ namespace EchoRequest.Code
 			}
 			CloseJson(response);
 		}
+		private static ImageFormat GetImageFormat(string contentType)
+		{
+			ImageFormat result = null;
+			switch (contentType)
+			{
+				case "image/gif":
+					result = ImageFormat.Gif;
+					break;
+				case "image/jpeg":
+					result = ImageFormat.Jpeg;
+					break;
+				case "image/png":
+					result = ImageFormat.Png;
+					break;
+			}
+			return result;
+		}
 		private static void SaveImageFiles(HttpFileCollection files)
 		{
 			foreach (string key in files.AllKeys)
 			{
 				HttpPostedFile file = files[key];
-				byte[] bytes = new byte[file.ContentLength];
-				file.InputStream.Read(bytes, 0, bytes.Length);
-				string base64 = Convert.ToBase64String(bytes);
-
-				OpenJson(response, key);
-				var commaFile = string.Empty;
-				WriteKeyValue(response, ref commaFile, "contentLength", file.ContentLength);
-				WriteKeyValue(response, ref commaFile, "contentType", file.ContentType);
-				WriteKeyValue(response, ref commaFile, "fileName", file.FileName);
-				WriteKeyValue(response, ref commaFile, "base64", base64);
-				CloseJson(response);
-				response.Write(comma);
-				comma = ", ";
-				//string json = string.Format("{0}\"{1}\": \"{2}\"", comma, key, base64);
-				//comma = ", ";
-				//response.Write(json);
+				ImageFormat format = GetImageFormat(file.ContentType);
+				if (format != null)
+				{
+					Image image = Image.FromStream(file.InputStream);
+					image.Save(file.FileName, format);
+				}
 			}
 		}
 	}
