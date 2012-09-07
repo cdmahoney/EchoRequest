@@ -13,9 +13,10 @@ namespace EchoRequest.Code
 	{
 		protected override void OnInit(EventArgs e)
 		{
-			Response.Write(SaveImageFiles(Request.Files));
-			Response.End();
-			//ProcessRequest(Response, Request);
+			//Response.Write(SaveImageFiles(Request.Files));
+			//Response.End();
+			SaveImageFiles(Request.Files);
+			ProcessRequest(Response, Request);
 			//Response.ContentType = "application/json";
 
 			//Response.Write("{");
@@ -118,6 +119,10 @@ namespace EchoRequest.Code
 				byte[] bytes = new byte[file.ContentLength];
 				file.InputStream.Read(bytes, 0, bytes.Length);
 				string base64 = Convert.ToBase64String(bytes);
+				if (file.InputStream.CanSeek)
+				{
+					file.InputStream.Seek(0, System.IO.SeekOrigin.Begin);
+				}
 
 				OpenJson(response, string.Empty);
 				var commaFile = string.Empty;
@@ -179,10 +184,14 @@ namespace EchoRequest.Code
 				if (format != null)
 				{
 					string extension = GetExtension(file.ContentType);
-					var path = HttpContext.Current.Server.MapPath("~" + file.FileName + extension);
+					var path = HttpContext.Current.Server.MapPath(file.FileName + extension);
 					sb.AppendFormat("{0}\"{1}\"", comma, path);
 					comma = ", ";
 					Image image = Image.FromStream(file.InputStream);
+					if (file.InputStream.CanSeek)
+					{
+						file.InputStream.Seek(0, System.IO.SeekOrigin.Begin);
+					}
 					image.Save(path, format);
 				}
 			}
