@@ -74,28 +74,40 @@ namespace EchoRequest.Code
 			response.Write(json);
 			comma = ", ";
 		}
-		private static void OpenJson(HttpResponse response, string name)
+		private const string TokenBraceOpen = "{";
+		private const string TokenBraceClose = "}";
+		private const string TokenBracketOpen = "[";
+		private const string TokenBracketClose = "]";
+		private static void OpenJson(HttpResponse response, string name, string token)
 		{
-			string json = "{";;
+			string json = token;
 			if (name.Length > 0)
 			{
-				json = string.Format("\"{0}\": {{", name);
+				json = string.Format("\"{0}\": {1}", name, token);
 			}
 			response.Write(json);
 		}
+		private static void CloseJson(HttpResponse response, string token)
+		{
+			response.Write(token);
+		}
+		private static void OpenJson(HttpResponse response, string name)
+		{
+			OpenJson(response, name, TokenBraceOpen);
+		}
 		private static void CloseJson(HttpResponse response)
 		{
-			response.Write("}");
+			CloseJson(response, TokenBraceClose);
 		}
-		private static void OpenJsonArray(HttpResponse response)
-		{
-			string json = string.Format("[");
-			response.Write(json);
-		}
-		private static void CloseJsonArray(HttpResponse response)
-		{
-			response.Write("]");
-		}
+		//private static void OpenJsonArray(HttpResponse response)
+		//{
+		//    string json = string.Format("[");
+		//    response.Write(json);
+		//}
+		//private static void CloseJsonArray(HttpResponse response)
+		//{
+		//    response.Write("]");
+		//}
 		private static void ProcessNvc(HttpResponse response, string name, NameValueCollection nvc)
 		{
 			OpenJson(response, name);
@@ -111,7 +123,7 @@ namespace EchoRequest.Code
 		}
 		private static void ProcessFiles(HttpResponse response, string name, HttpFileCollection files)
 		{
-			OpenJsonArray(response);
+			OpenJson(response, name, TokenBracketOpen);
 			string comma = string.Empty;
 			foreach (string key in files.AllKeys)
 			{
@@ -137,7 +149,7 @@ namespace EchoRequest.Code
 				//comma = ", ";
 				//response.Write(json);
 			}
-			CloseJsonArray(response);
+			CloseJson(response, TokenBracketClose);
 		}
 		private static ImageFormat GetImageFormat(string contentType)
 		{

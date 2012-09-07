@@ -42,7 +42,6 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="camera.png" />
     <Content Include="Default.aspx" />
     <Content Include="echojson.aspx" />
     <Content Include="Web.config" />
