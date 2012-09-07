@@ -129,23 +129,20 @@ namespace EchoRequest.Code
 			{
 				HttpPostedFile file = files[key];
 
-				string base64 = string.Format("{0} bytes", file.ContentLength);
-				//byte[] bytes = new byte[file.ContentLength];
-				//file.InputStream.Read(bytes, 0, bytes.Length);
-				//string base64 = Convert.ToBase64String(bytes);
+				//string base64 = string.Format("{0} bytes", file.ContentLength);
+				byte[] bytes = new byte[file.ContentLength];
+				file.InputStream.Read(bytes, 0, bytes.Length);
+				string base64 = Convert.ToBase64String(bytes);
 
 				OpenJson(response, string.Empty);
 				var commaFile = string.Empty;
 				WriteKeyValue(response, ref commaFile, "contentLength", file.ContentLength);
 				WriteKeyValue(response, ref commaFile, "contentType", file.ContentType);
 				WriteKeyValue(response, ref commaFile, "fileName", file.FileName);
-				WriteKeyValue(response, ref commaFile, "base64", base64);
+				WriteKeyValue(response, ref commaFile, "base64Content", base64);
 				CloseJson(response);
 				response.Write(comma);
 				comma = ", ";
-				//string json = string.Format("{0}\"{1}\": \"{2}\"", comma, key, base64);
-				//comma = ", ";
-				//response.Write(json);
 			}
 			CloseJson(response, TokenBracketClose);
 		}
