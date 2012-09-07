@@ -128,13 +128,11 @@ namespace EchoRequest.Code
 			foreach (string key in files.AllKeys)
 			{
 				HttpPostedFile file = files[key];
-				byte[] bytes = new byte[file.ContentLength];
-				file.InputStream.Read(bytes, 0, bytes.Length);
-				string base64 = Convert.ToBase64String(bytes);
-				if (file.InputStream.CanSeek)
-				{
-					file.InputStream.Seek(0, System.IO.SeekOrigin.Begin);
-				}
+
+				string base64 = string.Format("\"{0}\" bytes", file.ContentLength);
+				//byte[] bytes = new byte[file.ContentLength];
+				//file.InputStream.Read(bytes, 0, bytes.Length);
+				//string base64 = Convert.ToBase64String(bytes);
 
 				OpenJson(response, string.Empty);
 				var commaFile = string.Empty;
