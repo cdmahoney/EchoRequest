@@ -72,12 +72,25 @@ namespace EchoRequest.Code
 		}
 		private static void OpenJson(HttpResponse response, string name)
 		{
-			string json = string.Format("\"{0}\": {{", name);
+			string json = "{";;
+			if (name.Length > 0)
+			{
+				json = string.Format("\"{0}\": {{", name);
+			}
 			response.Write(json);
 		}
 		private static void CloseJson(HttpResponse response)
 		{
 			response.Write("}");
+		}
+		private static void OpenJsonArray(HttpResponse response)
+		{
+			string json = string.Format("[");
+			response.Write(json);
+		}
+		private static void CloseJsonArray(HttpResponse response)
+		{
+			response.Write("]");
 		}
 		private static void ProcessNvc(HttpResponse response, string name, NameValueCollection nvc)
 		{
@@ -94,7 +107,7 @@ namespace EchoRequest.Code
 		}
 		private static void ProcessFiles(HttpResponse response, string name, HttpFileCollection files)
 		{
-			OpenJson(response, name);
+			OpenJsonArray(response);
 			string comma = string.Empty;
 			foreach (string key in files.AllKeys)
 			{
@@ -103,7 +116,7 @@ namespace EchoRequest.Code
 				file.InputStream.Read(bytes, 0, bytes.Length);
 				string base64 = Convert.ToBase64String(bytes);
 
-				OpenJson(response, key);
+				OpenJson(response, string.Empty);
 				var commaFile = string.Empty;
 				WriteKeyValue(response, ref commaFile, "contentLength", file.ContentLength);
 				WriteKeyValue(response, ref commaFile, "contentType", file.ContentType);
@@ -116,7 +129,7 @@ namespace EchoRequest.Code
 				//comma = ", ";
 				//response.Write(json);
 			}
-			CloseJson(response);
+			CloseJsonArray(response);
 		}
 		private static ImageFormat GetImageFormat(string contentType)
 		{
