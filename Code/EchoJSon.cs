@@ -62,6 +62,12 @@ namespace EchoRequest.Code
 		{
 			response.Write(", " + Environment.NewLine);
 		}
+		public static void WriteKeyValue(HttpResponse response, ref string comma, string key, object value)
+		{
+			string json = string.Format("{0}\"{1}\": \"{2}\"", comma, key, value);
+			response.Write(json);
+			comma = ", ";
+		}
 		private static void OpenJson(HttpResponse response, string name)
 		{
 			string json = string.Format("\"{0}\": {{", name);
@@ -77,9 +83,10 @@ namespace EchoRequest.Code
 			string comma = string.Empty;
 			foreach (string key in nvc.AllKeys)
 			{
-				string json = string.Format("{0}\"{1}\": \"{2}\"", comma, key, nvc[key]);
-				comma = ", ";
-				response.Write(json);
+				WriteKeyValue(response, ref comma, key, nvc[key]);
+				//string json = string.Format("{0}\"{1}\": \"{2}\"", comma, key, nvc[key]);
+				//comma = ", ";
+				//response.Write(json);
 			}
 			CloseJson(response);
 		}
@@ -93,9 +100,19 @@ namespace EchoRequest.Code
 				byte[] bytes = new byte[file.ContentLength];
 				file.InputStream.Read(bytes, 0, bytes.Length);
 				string base64 = Convert.ToBase64String(bytes);
-				string json = string.Format("{0}\"{1}\": \"{2}\"", comma, key, base64);
+
+				OpenJson(response, key);
+				var commaFile = string.Empty;
+				WriteKeyValue(response, ref commaFile, "contentLength", file.ContentLength);
+				WriteKeyValue(response, ref commaFile, "contentType", file.ContentType);
+				WriteKeyValue(response, ref commaFile, "fileName", file.FileName);
+				WriteKeyValue(response, ref commaFile, "base64", base64);
+				CloseJson(response);
+				response.Write(comma);
 				comma = ", ";
-				response.Write(json);
+				//string json = string.Format("{0}\"{1}\": \"{2}\"", comma, key, base64);
+				//comma = ", ";
+				//response.Write(json);
 			}
 			CloseJson(response);
 		}
