@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 
@@ -12,8 +13,9 @@ namespace EchoRequest.Code
 	{
 		protected override void OnInit(EventArgs e)
 		{
-			SaveImageFiles(Request.Files);
-			ProcessRequest(Response, Request);
+			Response.Write(SaveImageFiles(Request.Files));
+			Response.End();
+			//ProcessRequest(Response, Request);
 			//Response.ContentType = "application/json";
 
 			//Response.Write("{");
@@ -166,8 +168,10 @@ namespace EchoRequest.Code
 			}
 			return result;
 		}
-		private static void SaveImageFiles(HttpFileCollection files)
+		private static string SaveImageFiles(HttpFileCollection files)
 		{
+			StringBuilder sb = new StringBuilder("{files: [");
+			string comma = string.Empty;
 			foreach (string key in files.AllKeys)
 			{
 				HttpPostedFile file = files[key];
@@ -176,10 +180,14 @@ namespace EchoRequest.Code
 				{
 					string extension = GetExtension(file.ContentType);
 					var path = HttpContext.Current.Server.MapPath("~" + file.FileName + extension);
+					sb.AppendFormat("{0}\"{1}\"", comma, path);
+					comma = ", ";
 					Image image = Image.FromStream(file.InputStream);
 					image.Save(path, format);
 				}
 			}
+			sb.Append("]}");
+			return sb.ToString();
 		}
 	}
 }
