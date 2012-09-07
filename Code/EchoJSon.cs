@@ -15,7 +15,7 @@ namespace EchoRequest.Code
 		{
 			//Response.Write(SaveImageFiles(Request.Files));
 			//Response.End();
-			SaveImageFiles(Request.Files);
+			//SaveImageFiles(Request.Files);
 			ProcessRequest(Response, Request);
 			//Response.ContentType = "application/json";
 
