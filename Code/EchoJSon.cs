@@ -12,6 +12,7 @@ namespace EchoRequest.Code
 	{
 		protected override void OnInit(EventArgs e)
 		{
+			SaveImageFiles(Request.Files);
 			ProcessRequest(Response, Request);
 			//Response.ContentType = "application/json";
 
