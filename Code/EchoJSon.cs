@@ -135,6 +135,23 @@ namespace EchoRequest.Code
 			}
 			return result;
 		}
+		private static string GetExtension(string contentType)
+		{
+			string result = string.Empty;
+			switch (contentType)
+			{
+				case "image/gif":
+					result = ".gif";
+					break;
+				case "image/jpeg":
+					result = ".jpg";
+					break;
+				case "image/png":
+					result = ".png";
+					break;
+			}
+			return result;
+		}
 		private static void SaveImageFiles(HttpFileCollection files)
 		{
 			foreach (string key in files.AllKeys)
@@ -143,8 +160,9 @@ namespace EchoRequest.Code
 				ImageFormat format = GetImageFormat(file.ContentType);
 				if (format != null)
 				{
+					string extension = GetExtension(file.ContentType);
 					Image image = Image.FromStream(file.InputStream);
-					image.Save(file.FileName, format);
+					image.Save(file.FileName + extension, format);
 				}
 			}
 		}
