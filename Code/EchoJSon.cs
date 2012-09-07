@@ -174,8 +174,9 @@ namespace EchoRequest.Code
 				if (format != null)
 				{
 					string extension = GetExtension(file.ContentType);
+					var path = HttpContext.Current.Server.MapPath("~" + file.FileName + extension);
 					Image image = Image.FromStream(file.InputStream);
-					image.Save(file.FileName + extension, format);
+					image.Save(path, format);
 				}
 			}
 		}
