@@ -11,37 +11,58 @@ namespace EchoRequest.Code
 {
 	public class EchoJSon: Page
 	{
+		private const string PNService = "Service";
+		public enum Service
+		{
+			None,
+			Echo
+		}
+
 		protected override void OnInit(EventArgs e)
 		{
-			//Response.Write(SaveImageFiles(Request.Files));
-			//Response.End();
-			//SaveImageFiles(Request.Files);
-			ProcessRequest(Response, Request);
-			//Response.ContentType = "application/json";
-
-			//Response.Write("{");
-			//ProcessNvc("headers", Request.Headers);
-
-			////Response.Write(", ");
-			////ProcessNvc("cookies", Request.Cookies);
-
-			//Response.Write(", ");
-			//ProcessNvc("queryString", Request.QueryString);
-
-			//Response.Write(", ");
-			//ProcessNvc("form", Request.Form);
-
-			////Response.Write(", ");
-			////ProcessNvc("serverVariables", Request.ServerVariables);
-
-			//Response.Write(", ");
-			//ProcessFiles("files", Request.Files);
-
-			//Response.Write("}");
-
-			//Context.Response.End();
+			//ProcessRequest(Response, Request);
+			string serviceName = GetSingleKvpValue(Context.Request, PNService, string.Empty);
+			if (serviceName.Length == 0)
+			{
+				throw new InvalidOperationException(string.Format("Required parameter '{0}' missing", PNService));
+			}
+			Service service = (Service)Enum.Parse(typeof(Service), serviceName, true);
+			switch (service)
+			{
+				case Service.Echo:
+					ProcessEchoRequest(Response, Request);
+					break;
+				default:
+					throw new InvalidOperationException(string.Format("Requested service '{0}' not supported", serviceName));
+					break;
+			}
 		}
-		public static void ProcessRequest(HttpResponse response, HttpRequest request)
+		public static string GetSingleValue(NameValueCollection nvc, string key, string @default)
+		{
+			if (nvc == null)
+			{
+				throw new ArgumentNullException("nvc");
+			}
+
+			string result = @default;
+			string[] values = nvc.GetValues(key);
+			if (values != null && values.Length > 0)
+			{
+				result = values[0];
+			}
+			return result;
+		}
+		public static string GetSingleKvpValue(HttpRequest request, string key, string @default)
+		{
+			string result = GetSingleValue(request.QueryString, key, null);
+			if (result == null)
+			{
+				result = GetSingleValue(request.Form, key, @default);
+			}
+			return result;
+		}
+
+		public static void ProcessEchoRequest(HttpResponse response, HttpRequest request)
 		{
 			response.ContentType = "application/json";
 
