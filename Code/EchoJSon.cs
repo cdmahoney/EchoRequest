@@ -15,7 +15,8 @@ namespace EchoRequest.Code
 		public enum Service
 		{
 			None,
-			Echo
+			Echo,
+			ViamapTypes
 		}
 
 		protected override void OnInit(EventArgs e)
@@ -31,6 +32,9 @@ namespace EchoRequest.Code
 			{
 				case Service.Echo:
 					ProcessEchoRequest(Response, Request);
+					break;
+				case Service.ViamapTypes:
+					ProcessViamapTypesRequest(Response, Request);
 					break;
 				default:
 					throw new InvalidOperationException(string.Format("Requested service '{0}' not supported", serviceName));
@@ -61,7 +65,26 @@ namespace EchoRequest.Code
 			}
 			return result;
 		}
+		public static void ProcessViamapTypesRequest(HttpResponse response, HttpRequest request)
+		{
+			response.ContentType = "application/json";
+			
+			string[] types = new string[] {
+				"Faroles",
+				"Acera",
+				"Contenedores"
+				};
 
+			response.Write("{ \"types\": [");
+			string comma = string.Empty;
+			foreach (string s in types)
+			{
+				response.Write(string.Format("{0}\"{1}\"", comma, s));
+				comma = ", ";
+			}
+			response.Write("]}");
+			response.End();
+		}
 		public static void ProcessEchoRequest(HttpResponse response, HttpRequest request)
 		{
 			response.ContentType = "application/json";
