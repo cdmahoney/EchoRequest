@@ -110,7 +110,8 @@ namespace EchoRequest.Code
 		}
 		public static void WriteSeparator(HttpResponse response)
 		{
-			response.Write(", " + Environment.NewLine);
+			response.Write(", ");
+			//response.Write(", " + Environment.NewLine);
 		}
 		public static void WriteKeyValue(HttpResponse response, ref string comma, string key, object value)
 		{
