@@ -12,6 +12,7 @@ namespace EchoRequest.Code
 	public class EchoJSon: Page
 	{
 		private const string PNService = "Service";
+		private const string PNCallback = "Callback";
 		public enum Service
 		{
 			None,
@@ -22,6 +23,15 @@ namespace EchoRequest.Code
 
 		protected override void OnInit(EventArgs e)
 		{
+			string suffix = string.Empty;
+			string callback = GetSingleKvpValue(Context.Request, PNCallback, string.Empty);
+			if (callback.Length > 0)
+			{
+				string prefix = string.Format("{0}('", callback);
+				suffix = "')";
+				Context.Response.Write(prefix);
+			}
+
 			//ProcessRequest(Response, Request);
 			string serviceName = GetSingleKvpValue(Context.Request, PNService, string.Empty);
 			if (serviceName.Length == 0)
@@ -41,6 +51,12 @@ namespace EchoRequest.Code
 					throw new InvalidOperationException(string.Format("Requested service '{0}' not supported", serviceName));
 					break;
 			}
+
+			if(suffix.Length > 0)
+			{
+				Context.Response.Write(suffix);
+			}
+			Context.Response.End();
 		}
 		public static string GetSingleValue(NameValueCollection nvc, string key, string @default)
 		{
@@ -84,7 +100,7 @@ namespace EchoRequest.Code
 				comma = ", ";
 			}
 			response.Write("]}");
-			response.End();
+			//response.End();
 		}
 		public static void ProcessEchoRequest(HttpResponse response, HttpRequest request)
 		{
@@ -107,7 +123,7 @@ namespace EchoRequest.Code
 
 			response.Write("}");
 
-			response.End();
+			//response.End();
 		}
 		public static void WriteSeparator(HttpResponse response)
 		{
@@ -116,6 +132,7 @@ namespace EchoRequest.Code
 		}
 		public static void WriteKeyValue(HttpResponse response, ref string comma, string key, object value)
 		{
+			// TODO: Escape value?
 			string json = string.Format("{0}\"{1}\": \"{2}\"", comma, key, value);
 			response.Write(json);
 			comma = ", ";
