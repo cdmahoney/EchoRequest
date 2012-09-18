@@ -293,6 +293,9 @@ namespace EchoRequest.Code
 					case '\"':
 						sb.Append("\\\"");
 						break;
+					case '\'':
+						sb.Append("\\'");
+						break;
 					case '\\':
 						sb.Append("\\\\");
 						break;
