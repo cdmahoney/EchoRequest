@@ -27,8 +27,8 @@ namespace EchoRequest.Code
 			string callback = GetSingleKvpValue(Context.Request, PNCallback, string.Empty);
 			if (callback.Length > 0)
 			{
-				string prefix = string.Format("{0}('", callback);
-				suffix = "')";
+				string prefix = string.Format("{0}(", callback);
+				suffix = ")";
 				Context.Response.Write(prefix);
 			}
 
@@ -293,9 +293,10 @@ namespace EchoRequest.Code
 					case '\"':
 						sb.Append("\\\"");
 						break;
-					case '\'':
-						sb.Append("\\'");
-						break;
+					//case '\'':
+					//    // Added CDM 19/09/2012
+					//    sb.Append("\\'");
+					//    break;
 					case '\\':
 						sb.Append("\\\\");
 						break;
