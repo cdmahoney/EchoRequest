@@ -15,8 +15,8 @@ namespace EchoRequest.Code
 		public enum Service
 		{
 			None,
-			Echo,
-			ViamapTypes
+			Create,
+			GetTypes
 		}
 
 		protected override void OnInit(EventArgs e)
@@ -30,10 +30,10 @@ namespace EchoRequest.Code
 			Service service = (Service)Enum.Parse(typeof(Service), serviceName, true);
 			switch (service)
 			{
-				case Service.Echo:
+				case Service.Create:
 					ProcessEchoRequest(Response, Request);
 					break;
-				case Service.ViamapTypes:
+				case Service.GetTypes:
 					ProcessViamapTypesRequest(Response, Request);
 					break;
 				default:
