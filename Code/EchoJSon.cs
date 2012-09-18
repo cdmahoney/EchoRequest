@@ -19,6 +19,7 @@ namespace EchoRequest.Code
 			GetTypes
 		}
 
+
 		protected override void OnInit(EventArgs e)
 		{
 			//ProcessRequest(Response, Request);
