@@ -21,8 +21,8 @@
 					"style": 2,
 					"mapTypeIds": ["roadmap",
 						"satellite",
-						'Icc Topo', 
-						'Icc Orto'
+						"Icc Topo", 
+						"Icc Orto"
 						]
 					},
 				"zoomControl": true,
@@ -40,8 +40,8 @@
 					"style": 2,
 					"mapTypeIds": ["roadmap",
 						"satellite",
-						'Icc Topo', 
-						'Icc Orto'
+						"Icc Topo", 
+						"Icc Orto"
 						]
 					},
 				"zoomControl": true,
