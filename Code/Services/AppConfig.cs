@@ -14,13 +14,13 @@ namespace EchoRequest.Code.Services
 			string fullpath2 = request.MapPath(path);
 
 			// Set content type
-			response.ContentType = "application/json; charset=utf-8";
+			response.ContentType = "application/json";
+			//response.ContentType = "application/json; charset=utf-8";
 
 			// Cheap and cheerful
+			// Write content as text to prevent having to worry about character encoding
 			string content = File.ReadAllText(fullpath);
 			response.Write(content);
-			//byte[] content = File.ReadAllBytes(fullpath);
-			//response.OutputStream.Write(content, 0, content.Length);
 		}
 		public static void GetAppConfig(HttpResponse response, HttpRequest request)
 		{
