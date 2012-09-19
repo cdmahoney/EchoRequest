@@ -27,7 +27,7 @@
 					},
 				"zoomControl": true,
 				"zoomControlOptions": {
-					"position": 5,
+					"position": 5
 					},
 				"streetViewControl": false
 				}
@@ -46,7 +46,7 @@
 					},
 				"zoomControl": true,
 				"zoomControlOptions": {
-					"position": 5,
+					"position": 5
 					},
 				"streetViewControl": false
 				}
