@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="Code\Services\AppConfig.cs" />
     <Compile Include="Code\Support\SJavaScript.cs" />
+    <Compile Include="Code\Support\SLocalFile.cs" />
     <Compile Include="Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>
@@ -63,6 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\AppConfigServers.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\AppConfig.json" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -1,0 +1,72 @@
+﻿{
+	"configUrl": "json/appconfig.json",
+	"configServerServer": "http://echorequest.apphb.com/echojson.aspx?Service=GetAppConfigServers",
+	"configServer": "http://echorequest.apphb.com/echojson.aspx?Service=GetConfig",
+
+	"serviceViamapGetTypes": "http://echorequest.apphb.com/echojson.aspx?Service=GetTypes",
+	"serviceViamapCreate": "http://echorequest.apphb.com/echojson.aspx?Service=Create",
+
+	"culture": "es",
+	"supportedCultures": ["es", "ca"],
+	
+	"options": {
+		"user": {
+			"defaultEmail": "usuario@email.com"
+			},
+		"map": {
+			"gmap": {
+				"zoom": 17,
+				"mapTypeId": "Icc Topo",
+				"mapTypeControlOptions": {
+					"style": 2,
+					"mapTypeIds": ["roadmap",
+						"satellite",
+						'Icc Topo', 
+						'Icc Orto'
+						]
+					},
+				"zoomControl": true,
+				"zoomControlOptions": {
+					"position": 5,
+					},
+				"streetViewControl": false
+				}
+			},
+		"send": {
+			"map": {
+				"zoom": 17,
+				"mapTypeId": "Icc Topo",
+				"mapTypeControlOptions": {
+					"style": 2,
+					"mapTypeIds": ["roadmap",
+						"satellite",
+						'Icc Topo', 
+						'Icc Orto'
+						]
+					},
+				"zoomControl": true,
+				"zoomControlOptions": {
+					"position": 5,
+					},
+				"streetViewControl": false
+				}
+			}
+		},
+
+	"literals": {
+		"es": {
+			"app": {
+				},
+			"index": {
+				},
+			"user": {
+				},
+			"map": {
+				},
+			"camera": {
+				},
+			"send": {
+				}
+			}
+		}
+}
