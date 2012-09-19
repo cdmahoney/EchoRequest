@@ -14,7 +14,7 @@ namespace EchoRequest.Code.Services
 			string fullpath2 = request.MapPath(path);
 
 			// Set content type
-			response.ContentType = "application/json";
+			response.ContentType = "application/json; charset=utf-8";
 
 			// Cheap and cheerful
 			byte[] content = File.ReadAllBytes(fullpath);
