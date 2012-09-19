@@ -17,8 +17,10 @@ namespace EchoRequest.Code.Services
 			response.ContentType = "application/json; charset=utf-8";
 
 			// Cheap and cheerful
-			byte[] content = File.ReadAllBytes(fullpath);
-			response.OutputStream.Write(content, 0, content.Length);
+			string content = File.ReadAllText(fullpath);
+			response.Write(content);
+			//byte[] content = File.ReadAllBytes(fullpath);
+			//response.OutputStream.Write(content, 0, content.Length);
 		}
 		public static void GetAppConfig(HttpResponse response, HttpRequest request)
 		{
