@@ -1,5 +1,5 @@
 ﻿{
-	"configUrl": "json/appconfig.json",
+	"_localConfig": "json/appconfig.json",
 	"configServerServer": "http://echorequest.apphb.com/echojson.aspx?Service=GetAppConfigServers",
 	"configServer": "http://echorequest.apphb.com/echojson.aspx?Service=GetConfig",
 
@@ -14,6 +14,10 @@
 			"defaultEmail": "usuario@email.com"
 			},
 		"map": {
+			"map": {
+				"slat": "41 31 52.31", 
+				"slng": "2 4 54.12",
+				},
 			"gmap": {
 				"zoom": 17,
 				"mapTypeId": "Icc Topo",
@@ -36,6 +40,7 @@
 			"map": {
 				"zoom": 17,
 				"mapTypeId": "Icc Topo",
+				"draggable": false, 
 				"mapTypeControlOptions": {
 					"style": 2,
 					"mapTypeIds": ["roadmap",
