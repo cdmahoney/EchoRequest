@@ -53,6 +53,7 @@
     <Compile Include="Code\Services\AppConfig.cs" />
     <Compile Include="Code\Support\SJavaScript.cs" />
     <Compile Include="Code\Support\SLocalFile.cs" />
+    <Compile Include="Code\Support\SMD5.cs" />
     <Compile Include="Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>
