@@ -68,6 +68,7 @@
     <Compile Include="GeoLocation.aspx.designer.cs">
       <DependentUpon>GeoLocation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Interface\MultasServiceInterfaces.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Multas.asmx.cs">
       <DependentUpon>Multas.asmx</DependentUpon>

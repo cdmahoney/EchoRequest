@@ -1,0 +1,1 @@
+wsdl.exe multas.wsdl /l:c# /serverInterface /n:EchoRequest.Interface

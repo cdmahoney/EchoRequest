@@ -1,0 +1,1412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://impl.multas.gtwin.conecta" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://impl.multas.gtwin.conecta" xmlns:intf="http://impl.multas.gtwin.conecta" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://impl.multas.gtwin.conecta" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getDetail">
+    <complexType>
+     <sequence>
+      <element name="boletinId" type="xsd:string"/>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getDetailResponse">
+    <complexType>
+     <sequence>
+      <element name="getDetailReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="login">
+    <complexType>
+     <sequence>
+      <element name="user" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loginResponse">
+    <complexType>
+     <sequence>
+      <element name="loginReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getLegislacionCode">
+    <complexType>
+     <sequence>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getLegislacionCodeResponse">
+    <complexType>
+     <sequence>
+      <element name="getLegislacionCodeReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getInfraccionXml">
+    <complexType>
+     <sequence>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getInfraccionXmlResponse">
+    <complexType>
+     <sequence>
+      <element name="getInfraccionXmlReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getInfoFromMatricula">
+    <complexType>
+     <sequence>
+      <element name="xmlIn" type="xsd:string"/>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getInfoFromMatriculaResponse">
+    <complexType>
+     <sequence>
+      <element name="getInfoFromMatriculaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getTipoVehiculos">
+    <complexType>
+     <sequence>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getTipoVehiculosResponse">
+    <complexType>
+     <sequence>
+      <element name="getTipoVehiculosReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMotivosNoNotificacion">
+    <complexType>
+     <sequence>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMotivosNoNotificacionResponse">
+    <complexType>
+     <sequence>
+      <element name="getMotivosNoNotificacionReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPerson">
+    <complexType>
+     <sequence>
+      <element name="dni" type="xsd:string"/>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPersonResponse">
+    <complexType>
+     <sequence>
+      <element name="getPersonReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getStreets">
+    <complexType>
+     <sequence>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getStreetsResponse">
+    <complexType>
+     <sequence>
+      <element name="getStreetsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEnCalidadDe">
+    <complexType>
+     <sequence>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEnCalidadDeResponse">
+    <complexType>
+     <sequence>
+      <element name="getEnCalidadDeReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getBrowseExp">
+    <complexType>
+     <sequence>
+      <element name="xmlIn" type="xsd:string"/>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getBrowseExpResponse">
+    <complexType>
+     <sequence>
+      <element name="getBrowseExpReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="saveMulta">
+    <complexType>
+     <sequence>
+      <element name="xmlIn" type="xsd:string"/>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="saveMultaResponse">
+    <complexType>
+     <sequence>
+      <element name="saveMultaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="anularMulta">
+    <complexType>
+     <sequence>
+      <element name="boletinId" type="xsd:string"/>
+      <element name="motivo" type="xsd:string"/>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="anularMultaResponse">
+    <complexType>
+     <sequence>
+      <element name="anularMultaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="grabarDocumentoEnExpediente">
+    <complexType>
+     <sequence>
+      <element name="boletinId" type="xsd:string"/>
+      <element name="extension" type="xsd:string"/>
+      <element name="serializado" type="xsd:string"/>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="grabarDocumentoEnExpedienteResponse">
+    <complexType>
+     <sequence>
+      <element name="grabarDocumentoEnExpedienteReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMarcas">
+    <complexType>
+     <sequence>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMarcasResponse">
+    <complexType>
+     <sequence>
+      <element name="getMarcasReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getGruas">
+    <complexType>
+     <sequence>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getGruasResponse">
+    <complexType>
+     <sequence>
+      <element name="getGruasReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getInstrumentoMedida">
+    <complexType>
+     <sequence>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getInstrumentoMedidaResponse">
+    <complexType>
+     <sequence>
+      <element name="getInstrumentoMedidaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAgente">
+    <complexType>
+     <sequence>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAgenteResponse">
+    <complexType>
+     <sequence>
+      <element name="getAgenteReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAppVersion">
+    <complexType/>
+   </element>
+   <element name="getAppVersionResponse">
+    <complexType>
+     <sequence>
+      <element name="getAppVersionReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getUltimaSincronizacion">
+    <complexType/>
+   </element>
+   <element name="getUltimaSincronizacionResponse">
+    <complexType>
+     <sequence>
+      <element name="getUltimaSincronizacionReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getUltimaSincronizacionByEntity">
+    <complexType>
+     <sequence>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getUltimaSincronizacionByEntityResponse">
+    <complexType>
+     <sequence>
+      <element name="getUltimaSincronizacionByEntityReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getFineBookMark">
+    <complexType>
+     <sequence>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getFineBookMarkResponse">
+    <complexType>
+     <sequence>
+      <element name="getFineBookMarkReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setFineBookMark">
+    <complexType>
+     <sequence>
+      <element name="xmlIn" type="xsd:string"/>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setFineBookMarkResponse">
+    <complexType>
+     <sequence>
+      <element name="setFineBookMarkReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getTalCounter">
+    <complexType>
+     <sequence>
+      <element name="xmlIn" type="xsd:string"/>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getTalCounterResponse">
+    <complexType>
+     <sequence>
+      <element name="getTalCounterReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setTalCounter">
+    <complexType>
+     <sequence>
+      <element name="xmlIn" type="xsd:string"/>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setTalCounterResponse">
+    <complexType>
+     <sequence>
+      <element name="setTalCounterReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getRangosVelocidad">
+    <complexType>
+     <sequence>
+      <element name="xmlIn" type="xsd:string"/>
+      <element name="token" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getRangosVelocidadResponse">
+    <complexType>
+     <sequence>
+      <element name="getRangosVelocidadReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="grabarDocumentoEnExpedienteRequest">
+
+      <wsdl:part element="impl:grabarDocumentoEnExpediente" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getInstrumentoMedidaRequest">
+
+      <wsdl:part element="impl:getInstrumentoMedida" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPersonRequest">
+
+      <wsdl:part element="impl:getPerson" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRangosVelocidadRequest">
+
+      <wsdl:part element="impl:getRangosVelocidad" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setFineBookMarkResponse">
+
+      <wsdl:part element="impl:setFineBookMarkResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getInfraccionXmlRequest">
+
+      <wsdl:part element="impl:getInfraccionXml" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="loginResponse">
+
+      <wsdl:part element="impl:loginResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setTalCounterRequest">
+
+      <wsdl:part element="impl:setTalCounter" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDetailRequest">
+
+      <wsdl:part element="impl:getDetail" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUltimaSincronizacionResponse">
+
+      <wsdl:part element="impl:getUltimaSincronizacionResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAppVersionResponse">
+
+      <wsdl:part element="impl:getAppVersionResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBrowseExpResponse">
+
+      <wsdl:part element="impl:getBrowseExpResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getInstrumentoMedidaResponse">
+
+      <wsdl:part element="impl:getInstrumentoMedidaResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDetailResponse">
+
+      <wsdl:part element="impl:getDetailResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLegislacionCodeResponse">
+
+      <wsdl:part element="impl:getLegislacionCodeResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEnCalidadDeRequest">
+
+      <wsdl:part element="impl:getEnCalidadDe" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMotivosNoNotificacionResponse">
+
+      <wsdl:part element="impl:getMotivosNoNotificacionResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMotivosNoNotificacionRequest">
+
+      <wsdl:part element="impl:getMotivosNoNotificacion" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEnCalidadDeResponse">
+
+      <wsdl:part element="impl:getEnCalidadDeResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTalCounterResponse">
+
+      <wsdl:part element="impl:getTalCounterResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getInfraccionXmlResponse">
+
+      <wsdl:part element="impl:getInfraccionXmlResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFineBookMarkResponse">
+
+      <wsdl:part element="impl:getFineBookMarkResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPersonResponse">
+
+      <wsdl:part element="impl:getPersonResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBrowseExpRequest">
+
+      <wsdl:part element="impl:getBrowseExp" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="saveMultaResponse">
+
+      <wsdl:part element="impl:saveMultaResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAppVersionRequest">
+
+      <wsdl:part element="impl:getAppVersion" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTipoVehiculosResponse">
+
+      <wsdl:part element="impl:getTipoVehiculosResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLegislacionCodeRequest">
+
+      <wsdl:part element="impl:getLegislacionCode" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMarcasRequest">
+
+      <wsdl:part element="impl:getMarcas" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStreetsResponse">
+
+      <wsdl:part element="impl:getStreetsResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="loginRequest">
+
+      <wsdl:part element="impl:login" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRangosVelocidadResponse">
+
+      <wsdl:part element="impl:getRangosVelocidadResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getGruasResponse">
+
+      <wsdl:part element="impl:getGruasResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="grabarDocumentoEnExpedienteResponse">
+
+      <wsdl:part element="impl:grabarDocumentoEnExpedienteResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTalCounterRequest">
+
+      <wsdl:part element="impl:getTalCounter" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getInfoFromMatriculaRequest">
+
+      <wsdl:part element="impl:getInfoFromMatricula" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getInfoFromMatriculaResponse">
+
+      <wsdl:part element="impl:getInfoFromMatriculaResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setTalCounterResponse">
+
+      <wsdl:part element="impl:setTalCounterResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUltimaSincronizacionByEntityRequest">
+
+      <wsdl:part element="impl:getUltimaSincronizacionByEntity" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="saveMultaRequest">
+
+      <wsdl:part element="impl:saveMulta" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getGruasRequest">
+
+      <wsdl:part element="impl:getGruas" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAgenteRequest">
+
+      <wsdl:part element="impl:getAgente" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUltimaSincronizacionRequest">
+
+      <wsdl:part element="impl:getUltimaSincronizacion" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setFineBookMarkRequest">
+
+      <wsdl:part element="impl:setFineBookMark" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMarcasResponse">
+
+      <wsdl:part element="impl:getMarcasResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTipoVehiculosRequest">
+
+      <wsdl:part element="impl:getTipoVehiculos" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStreetsRequest">
+
+      <wsdl:part element="impl:getStreets" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUltimaSincronizacionByEntityResponse">
+
+      <wsdl:part element="impl:getUltimaSincronizacionByEntityResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFineBookMarkRequest">
+
+      <wsdl:part element="impl:getFineBookMark" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAgenteResponse">
+
+      <wsdl:part element="impl:getAgenteResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="anularMultaRequest">
+
+      <wsdl:part element="impl:anularMulta" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="anularMultaResponse">
+
+      <wsdl:part element="impl:anularMultaResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Multas">
+
+      <wsdl:operation name="getDetail">
+
+         <wsdl:input message="impl:getDetailRequest" name="getDetailRequest"/>
+
+         <wsdl:output message="impl:getDetailResponse" name="getDetailResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="login">
+
+         <wsdl:input message="impl:loginRequest" name="loginRequest"/>
+
+         <wsdl:output message="impl:loginResponse" name="loginResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLegislacionCode">
+
+         <wsdl:input message="impl:getLegislacionCodeRequest" name="getLegislacionCodeRequest"/>
+
+         <wsdl:output message="impl:getLegislacionCodeResponse" name="getLegislacionCodeResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getInfraccionXml">
+
+         <wsdl:input message="impl:getInfraccionXmlRequest" name="getInfraccionXmlRequest"/>
+
+         <wsdl:output message="impl:getInfraccionXmlResponse" name="getInfraccionXmlResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getInfoFromMatricula">
+
+         <wsdl:input message="impl:getInfoFromMatriculaRequest" name="getInfoFromMatriculaRequest"/>
+
+         <wsdl:output message="impl:getInfoFromMatriculaResponse" name="getInfoFromMatriculaResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTipoVehiculos">
+
+         <wsdl:input message="impl:getTipoVehiculosRequest" name="getTipoVehiculosRequest"/>
+
+         <wsdl:output message="impl:getTipoVehiculosResponse" name="getTipoVehiculosResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMotivosNoNotificacion">
+
+         <wsdl:input message="impl:getMotivosNoNotificacionRequest" name="getMotivosNoNotificacionRequest"/>
+
+         <wsdl:output message="impl:getMotivosNoNotificacionResponse" name="getMotivosNoNotificacionResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPerson">
+
+         <wsdl:input message="impl:getPersonRequest" name="getPersonRequest"/>
+
+         <wsdl:output message="impl:getPersonResponse" name="getPersonResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getStreets">
+
+         <wsdl:input message="impl:getStreetsRequest" name="getStreetsRequest"/>
+
+         <wsdl:output message="impl:getStreetsResponse" name="getStreetsResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEnCalidadDe">
+
+         <wsdl:input message="impl:getEnCalidadDeRequest" name="getEnCalidadDeRequest"/>
+
+         <wsdl:output message="impl:getEnCalidadDeResponse" name="getEnCalidadDeResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBrowseExp">
+
+         <wsdl:input message="impl:getBrowseExpRequest" name="getBrowseExpRequest"/>
+
+         <wsdl:output message="impl:getBrowseExpResponse" name="getBrowseExpResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="saveMulta">
+
+         <wsdl:input message="impl:saveMultaRequest" name="saveMultaRequest"/>
+
+         <wsdl:output message="impl:saveMultaResponse" name="saveMultaResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="anularMulta">
+
+         <wsdl:input message="impl:anularMultaRequest" name="anularMultaRequest"/>
+
+         <wsdl:output message="impl:anularMultaResponse" name="anularMultaResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="grabarDocumentoEnExpediente">
+
+         <wsdl:input message="impl:grabarDocumentoEnExpedienteRequest" name="grabarDocumentoEnExpedienteRequest"/>
+
+         <wsdl:output message="impl:grabarDocumentoEnExpedienteResponse" name="grabarDocumentoEnExpedienteResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMarcas">
+
+         <wsdl:input message="impl:getMarcasRequest" name="getMarcasRequest"/>
+
+         <wsdl:output message="impl:getMarcasResponse" name="getMarcasResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getGruas">
+
+         <wsdl:input message="impl:getGruasRequest" name="getGruasRequest"/>
+
+         <wsdl:output message="impl:getGruasResponse" name="getGruasResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getInstrumentoMedida">
+
+         <wsdl:input message="impl:getInstrumentoMedidaRequest" name="getInstrumentoMedidaRequest"/>
+
+         <wsdl:output message="impl:getInstrumentoMedidaResponse" name="getInstrumentoMedidaResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAgente">
+
+         <wsdl:input message="impl:getAgenteRequest" name="getAgenteRequest"/>
+
+         <wsdl:output message="impl:getAgenteResponse" name="getAgenteResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAppVersion">
+
+         <wsdl:input message="impl:getAppVersionRequest" name="getAppVersionRequest"/>
+
+         <wsdl:output message="impl:getAppVersionResponse" name="getAppVersionResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUltimaSincronizacion">
+
+         <wsdl:input message="impl:getUltimaSincronizacionRequest" name="getUltimaSincronizacionRequest"/>
+
+         <wsdl:output message="impl:getUltimaSincronizacionResponse" name="getUltimaSincronizacionResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUltimaSincronizacionByEntity">
+
+         <wsdl:input message="impl:getUltimaSincronizacionByEntityRequest" name="getUltimaSincronizacionByEntityRequest"/>
+
+         <wsdl:output message="impl:getUltimaSincronizacionByEntityResponse" name="getUltimaSincronizacionByEntityResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getFineBookMark">
+
+         <wsdl:input message="impl:getFineBookMarkRequest" name="getFineBookMarkRequest"/>
+
+         <wsdl:output message="impl:getFineBookMarkResponse" name="getFineBookMarkResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setFineBookMark">
+
+         <wsdl:input message="impl:setFineBookMarkRequest" name="setFineBookMarkRequest"/>
+
+         <wsdl:output message="impl:setFineBookMarkResponse" name="setFineBookMarkResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTalCounter">
+
+         <wsdl:input message="impl:getTalCounterRequest" name="getTalCounterRequest"/>
+
+         <wsdl:output message="impl:getTalCounterResponse" name="getTalCounterResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setTalCounter">
+
+         <wsdl:input message="impl:setTalCounterRequest" name="setTalCounterRequest"/>
+
+         <wsdl:output message="impl:setTalCounterResponse" name="setTalCounterResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRangosVelocidad">
+
+         <wsdl:input message="impl:getRangosVelocidadRequest" name="getRangosVelocidadRequest"/>
+
+         <wsdl:output message="impl:getRangosVelocidadResponse" name="getRangosVelocidadResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="MultasSoapBinding" type="impl:Multas">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getDetail">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getDetailRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getDetailResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="login">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="loginRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="loginResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLegislacionCode">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getLegislacionCodeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getLegislacionCodeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getInfraccionXml">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getInfraccionXmlRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getInfraccionXmlResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getInfoFromMatricula">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getInfoFromMatriculaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getInfoFromMatriculaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTipoVehiculos">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTipoVehiculosRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTipoVehiculosResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMotivosNoNotificacion">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getMotivosNoNotificacionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMotivosNoNotificacionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPerson">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPersonRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPersonResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getStreets">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getStreetsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getStreetsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEnCalidadDe">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getEnCalidadDeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getEnCalidadDeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBrowseExp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getBrowseExpRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getBrowseExpResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="saveMulta">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="saveMultaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="saveMultaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="anularMulta">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="anularMultaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="anularMultaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="grabarDocumentoEnExpediente">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="grabarDocumentoEnExpedienteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="grabarDocumentoEnExpedienteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMarcas">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getMarcasRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMarcasResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getGruas">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getGruasRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getGruasResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getInstrumentoMedida">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getInstrumentoMedidaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getInstrumentoMedidaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAgente">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAgenteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAgenteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAppVersion">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAppVersionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAppVersionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUltimaSincronizacion">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getUltimaSincronizacionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getUltimaSincronizacionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUltimaSincronizacionByEntity">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getUltimaSincronizacionByEntityRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getUltimaSincronizacionByEntityResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getFineBookMark">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getFineBookMarkRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getFineBookMarkResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setFineBookMark">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setFineBookMarkRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setFineBookMarkResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTalCounter">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTalCounterRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTalCounterResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setTalCounter">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setTalCounterRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setTalCounterResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRangosVelocidad">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRangosVelocidadRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRangosVelocidadResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="MultasService">
+
+      <wsdl:port binding="impl:MultasSoapBinding" name="Multas">
+
+         <wsdlsoap:address location="http://10.49.136.168:8080/conecta10/services/Multas"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
