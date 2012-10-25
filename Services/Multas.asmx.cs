@@ -9,9 +9,9 @@ namespace EchoRequest.Services
 	/// Summary description for Multas
 	/// </summary>
 	//[WebService(Namespace = "http://echorequest.apphb.com//")]
-	[WebService(Namespace = "http://impl.multas.gtwin.conecta")]
-	[WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
-	[System.ComponentModel.ToolboxItem(false)]
+	//[WebService(Namespace = "http://impl.multas.gtwin.conecta")]
+	//[WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+	//[System.ComponentModel.ToolboxItem(false)]
 	public class Multas : System.Web.Services.WebService, Interface.IMultasSoapBinding
 	{
 		[WebMethod]
