@@ -5,6 +5,12 @@ using System.Web.Services;
 
 namespace EchoRequest.Services
 {
+	// Interface.IMultasSoapBinding generated with wsdl.exe from Tao1.0 Multas wsdl. Generated
+	// file is modified:
+	//	- Unsupported methods commented
+	//	- Soap Action added to supported methods.
+	// Command to generate IMultasSoapBinding (from VS development tools):
+	//	wsdl.exe multas.wsdl /l:c# /serverInterface /n:EchoRequest.Interface
 	/// <summary>
 	/// Summary description for Multas
 	/// </summary>
@@ -43,6 +49,28 @@ namespace EchoRequest.Services
 			return result;
 		}
 
+		public string getDetail(string boletinId, string token, string hash)
+		{
+			string result = string.Empty;
+			if (CheckLogin(token, hash))
+			{
+				string detail;
+				if (FineIdToDetail.TryGetValue(boletinId, out detail))
+				{
+					result = detail;
+				}
+				else
+				{
+					result = "<XML> <ERROR> <CODE>13</CODE> <DESCRIPTION>No se ha encontrado el expediente de multas</DESCRIPTION> <TYPE>W</TYPE> </ERROR> </XML>";
+				}
+			}
+			else
+			{
+				result = "<XML><ERROR><DESCRIPTION>ERROR: Error de Seguridad. No se ha podido encontar el algoritmo de seguridad.Error de Seguridad. No se ha podido validar el usuario</DESCRIPTION><TYPE>E</TYPE></ERROR></XML>";
+			}
+			return result;
+		}
+
 		[WebMethod]
 		public string getLegislacionCode(string token, string hash)
 		{
@@ -70,6 +98,13 @@ namespace EchoRequest.Services
 			{
 				result = "<XML><ERROR><DESCRIPTION>ERROR: Error de Seguridad. No se ha podido encontar el algoritmo de seguridad.Error de Seguridad. No se ha podido validar el usuario</DESCRIPTION><TYPE>E</TYPE></ERROR></XML>";
 			}
+			return result;
+		}
+
+		private static bool CheckLogin(string token, string hash)
+		{
+			string storedHash;
+			bool result = TokenToHash.TryGetValue(token, out storedHash) && hash == storedHash;
 			return result;
 		}
 		public static Dictionary<string, string> UserToPassword
@@ -114,5 +149,19 @@ namespace EchoRequest.Services
 			}
 		}
 		private static Dictionary<string, string> _TokenToHash;
+		public static Dictionary<string, string> FineIdToDetail
+		{
+			[System.Diagnostics.DebuggerStepThrough()]
+			get
+			{
+				if (_FineIdToDetail == null)
+				{
+					_FineIdToDetail = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
+					_FineIdToDetail["2012-0-11111111"] = "<XML><MULFECINF>20120601100000</MULFECINF><MULOIDIPR>210330400976374806402</MULOIDIPR><MULOIDEXI>101604200424061309900</MULOIDEXI><MULNOTMAN>F</MULNOTMAN><MULNONOTI>1</MULNONOTI><MULOIDVIA>101800000002011908000</MULOIDVIA><MULNUMVI1>12</MULNUMVI1><MULOIDEXV></MULOIDEXV><MULTITNOM>RODRIGUEZ*IBAÑEZ,ROLO</MULTITNOM><MULTITACR>ES</MULTITACR><MULTITIDE>033500866</MULTITIDE><MULTITCON>D</MULTITCON><MULTITOID>2000504200201238209900</MULTITOID><MULTITDIR>PZ JAZMIN,    1 Esc 1 1º A</MULTITDIR><MULTITMUN>ALCALA DE HENARES</MULTITMUN><MULTITPRO>MADRID</MULTITPRO><MULTITPAI>ESPAÑA</MULTITPAI><MULINFNOM>RODRIGUEZ*IBAÑEZ,ROLO</MULINFNOM><MULINFACR>ES</MULINFACR><MULINFIDE>033500866</MULINFIDE><MULINFCON>D</MULINFCON><MULINFOID>2000504200201238209900</MULINFOID><MULINFDIR>PZ JAZMIN,    1 Esc 1 1º A</MULINFDIR><MULINFMUN>ALCALA DE HENARES</MULINFMUN><MULINFPRO>MADRID</MULINFPRO><MULINFPAI>ESPAÑA</MULINFPAI><MULCODAG1>1</MULCODAG1><MULCODAG2></MULCODAG2><MULCODGRU></MULCODGRU><MULCODAPA></MULCODAPA><MULMATRIC>  -1743  -DSV</MULMATRIC><MULTIPVEH>1</MULTIPVEH><MULMARVEH></MULMARVEH><MULMARCA>0</MULMARCA><MULCOLVEH></MULCOLVEH><MULOIDCOM></MULOIDCOM><MULINSTIC>100100300001409600100</MULINSTIC><MULCREDAT>20120703174526</MULCREDAT><MULIDEBOL>2012-0-11111111</MULIDEBOL><MULTINFOVIAEXTEND></MULTINFOVIAEXTEND><MULTITPERSON>2000404200184022709900</MULTITPERSON><MULTITADDRESS>100900400010598400100</MULTITADDRESS><MULINFPERSON>2000404200184022709900</MULINFPERSON><MULINFADDRESS>100900400010598400100</MULINFADDRESS></XML>";
+				}
+				return _FineIdToDetail;
+			}
+		}
+		private static Dictionary<string, string> _FineIdToDetail;
 	}
 }

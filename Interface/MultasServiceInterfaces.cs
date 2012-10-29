@@ -26,10 +26,10 @@ namespace EchoRequest.Interface {
     public interface IMultasSoapBinding {
         
         /// <remarks/>
-		//[System.Web.Services.WebMethodAttribute()]
-		//[System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://impl.multas.gtwin.conecta", ResponseNamespace="http://impl.multas.gtwin.conecta", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-		//[return: System.Xml.Serialization.XmlElementAttribute("getDetailReturn")]
-		//string getDetail(string boletinId, string token, string hash);
+		[System.Web.Services.WebMethodAttribute()]
+		[System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://impl.multas.gtwin.conecta/getDetail", RequestNamespace = "http://impl.multas.gtwin.conecta", ResponseNamespace = "http://impl.multas.gtwin.conecta", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+		[return: System.Xml.Serialization.XmlElementAttribute("getDetailReturn")]
+		string getDetail(string boletinId, string token, string hash);
         
         /// <remarks/>
         [System.Web.Services.WebMethodAttribute()]
