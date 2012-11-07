@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Web;
 using System.Web.Services;
 
@@ -101,12 +102,169 @@ namespace EchoRequest.Services
 			return result;
 		}
 
+		[System.Web.Services.WebMethodAttribute()]
+		public string getInfraccionXml(string token, string hash)
+		{
+			string result = string.Empty;
+			if (TokenToHash[token] == hash)
+			{
+				result = ReadFile(XmlPath, "multasInfraccionXml.xml");
+			}
+			else
+			{
+				result = "<XML><ERROR><DESCRIPTION>ERROR: Error de Seguridad. No se ha podido encontar el algoritmo de seguridad.Error de Seguridad. No se ha podido validar el usuario</DESCRIPTION><TYPE>E</TYPE></ERROR></XML>";
+			}
+			return result;
+		}
+		/// <remarks/>
+		[System.Web.Services.WebMethodAttribute()]
+		public string getUltimaSincronizacionByEntity(string token, string hash)
+		{
+			string result = string.Empty;
+			if (TokenToHash[token] == hash)
+			{
+				result = ReadFile(XmlPath, "multasUltimaSincronizacionByEntity.xml");
+			}
+			else
+			{
+				result = "<XML><ERROR><DESCRIPTION>ERROR: Error de Seguridad. No se ha podido encontar el algoritmo de seguridad.Error de Seguridad. No se ha podido validar el usuario</DESCRIPTION><TYPE>E</TYPE></ERROR></XML>";
+			}
+			return result;
+		}
+		/// <remarks/>
+		[System.Web.Services.WebMethodAttribute()]
+		public string getEnCalidadDe(string token, string hash)
+		{
+			string result = string.Empty;
+			if (TokenToHash[token] == hash)
+			{
+				result = ReadFile(XmlPath, "multasEnCalidadDe.xml");
+			}
+			else
+			{
+				result = "<XML><ERROR><DESCRIPTION>ERROR: Error de Seguridad. No se ha podido encontar el algoritmo de seguridad.Error de Seguridad. No se ha podido validar el usuario</DESCRIPTION><TYPE>E</TYPE></ERROR></XML>";
+			}
+			return result;
+		}
+		[System.Web.Services.WebMethodAttribute()]
+		public string getGruas(string token, string hash)
+		{
+			string result = string.Empty;
+			if (TokenToHash[token] == hash)
+			{
+				result = ReadFile(XmlPath, "multasGruas.xml");
+			}
+			else
+			{
+				result = "<XML><ERROR><DESCRIPTION>ERROR: Error de Seguridad. No se ha podido encontar el algoritmo de seguridad.Error de Seguridad. No se ha podido validar el usuario</DESCRIPTION><TYPE>E</TYPE></ERROR></XML>";
+			}
+			return result;
+		}
+		[System.Web.Services.WebMethodAttribute()]
+		public string getInstrumentoMedida(string token, string hash)
+		{
+			string result = string.Empty;
+			if (TokenToHash[token] == hash)
+			{
+				result = ReadFile(XmlPath, "multasInstrumentoMedida.xml");
+			}
+			else
+			{
+				result = "<XML><ERROR><DESCRIPTION>ERROR: Error de Seguridad. No se ha podido encontar el algoritmo de seguridad.Error de Seguridad. No se ha podido validar el usuario</DESCRIPTION><TYPE>E</TYPE></ERROR></XML>";
+			}
+			return result;
+		}
+		[System.Web.Services.WebMethodAttribute()]
+		public string getAgente(string token, string hash)
+		{
+			string result = string.Empty;
+			if (TokenToHash[token] == hash)
+			{
+				result = ReadFile(XmlPath, "multasAgente.xml");
+			}
+			else
+			{
+				result = "<XML><ERROR><DESCRIPTION>ERROR: Error de Seguridad. No se ha podido encontar el algoritmo de seguridad.Error de Seguridad. No se ha podido validar el usuario</DESCRIPTION><TYPE>E</TYPE></ERROR></XML>";
+			}
+			return result;
+		}
+		/// <remarks/>
+		[System.Web.Services.WebMethodAttribute()]
+		public string getStreets(string token, string hash)
+		{
+			string result = string.Empty;
+			if (TokenToHash[token] == hash)
+			{
+				result = ReadFile(XmlPath, "multasStreet.xml");
+			}
+			else
+			{
+				result = "<XML><ERROR><DESCRIPTION>ERROR: Error de Seguridad. No se ha podido encontar el algoritmo de seguridad.Error de Seguridad. No se ha podido validar el usuario</DESCRIPTION><TYPE>E</TYPE></ERROR></XML>";
+			}
+			return result;
+		}
+		/// <remarks/>
+		[System.Web.Services.WebMethodAttribute()]
+		public string getMarcas(string token, string hash)
+		{
+			string result = string.Empty;
+			if (TokenToHash[token] == hash)
+			{
+				result = ReadFile(XmlPath, "multasMarcas.xml");
+			}
+			else
+			{
+				result = "<XML><ERROR><DESCRIPTION>ERROR: Error de Seguridad. No se ha podido encontar el algoritmo de seguridad.Error de Seguridad. No se ha podido validar el usuario</DESCRIPTION><TYPE>E</TYPE></ERROR></XML>";
+			}
+			return result;
+		}
+		[System.Web.Services.WebMethodAttribute()]
+		public string getTipoVehiculos(string token, string hash)
+		{
+			string result = string.Empty;
+			if (TokenToHash[token] == hash)
+			{
+				result = ReadFile(XmlPath, "multasTipoVehiculos.xml");
+			}
+			else
+			{
+				result = "<XML><ERROR><DESCRIPTION>ERROR: Error de Seguridad. No se ha podido encontar el algoritmo de seguridad.Error de Seguridad. No se ha podido validar el usuario</DESCRIPTION><TYPE>E</TYPE></ERROR></XML>";
+			}
+			return result;
+		}
+		/// <remarks/>
+		[System.Web.Services.WebMethodAttribute()]
+		public string getMotivosNoNotificacion(string token, string hash)
+		{
+			string result = string.Empty;
+			if (TokenToHash[token] == hash)
+			{
+				result = ReadFile(XmlPath, "multasMotivosNoNotificacion.xml");
+			}
+			else
+			{
+				result = "<XML><ERROR><DESCRIPTION>ERROR: Error de Seguridad. No se ha podido encontar el algoritmo de seguridad.Error de Seguridad. No se ha podido validar el usuario</DESCRIPTION><TYPE>E</TYPE></ERROR></XML>";
+			}
+			return result;
+		}
+
+
+
+
 		private static bool CheckLogin(string token, string hash)
 		{
 			string storedHash;
 			bool result = TokenToHash.TryGetValue(token, out storedHash) && hash == storedHash;
 			return result;
 		}
+		private static string ReadFile(string path, string name)
+		{
+			string fullPath = Path.Combine(path, name);
+			fullPath = HttpContext.Current.Server.MapPath(fullPath);
+			string result = File.ReadAllText(fullPath);
+			return result;
+		}
+		public static string XmlPath { [System.Diagnostics.DebuggerStepThrough()] get { return "..\\Xml"; } }
 		public static Dictionary<string, string> UserToPassword
 		{
 			[System.Diagnostics.DebuggerStepThrough()]

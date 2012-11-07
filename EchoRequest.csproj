@@ -82,6 +82,16 @@
     <Content Include="App_Data\AppConfig.json" />
     <Content Include="GeoLocation.aspx" />
     <Content Include="Services\Multas.asmx" />
+    <Content Include="Xml\multasAgente.xml" />
+    <Content Include="Xml\multasEnCalidadDe.xml" />
+    <Content Include="Xml\multasGruas.xml" />
+    <Content Include="Xml\multasInfraccionXml.xml" />
+    <Content Include="Xml\multasInstrumentoMedida.xml" />
+    <Content Include="Xml\multasMarcas.xml" />
+    <Content Include="Xml\multasMotivosNoNotificacion.xml" />
+    <Content Include="Xml\multasStreet.xml" />
+    <Content Include="Xml\multasTipoVehiculos.xml" />
+    <Content Include="Xml\multasUltimaSincronizacionByEntity.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="js\" />

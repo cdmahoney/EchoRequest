@@ -1,0 +1,22 @@
+﻿<XML>
+	<MULNONOTI>
+		<NONCODNON>1</NONCODNON>
+		<NONDESNON>Conductor ausente</NONDESNON>
+	</MULNONOTI>
+	<MULNONOTI>
+		<NONCODNON>2</NONCODNON>
+		<NONDESNON>No entropecer la fluidez del tráfico</NONDESNON>
+	</MULNONOTI>
+	<MULNONOTI>
+		<NONCODNON>3</NONCODNON>
+		<NONDESNON>Carecer de vehículo para seguimiento</NONDESNON>
+	</MULNONOTI>
+	<MULNONOTI>
+		<NONCODNON>4</NONCODNON>
+		<NONDESNON>Agente en acto de regulacion de trafico</NONDESNON>
+	</MULNONOTI>
+	<MULNONOTI>
+		<NONCODNON>5</NONCODNON>
+		<NONDESNON>Desobedecer la indicación de detención</NONDESNON>
+	</MULNONOTI>
+</XML>
