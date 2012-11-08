@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Services;
 
@@ -247,10 +249,48 @@ namespace EchoRequest.Services
 			}
 			return result;
 		}
+		/// <remarks/>
+		[System.Web.Services.WebMethodAttribute()]
+		public string getInfoFromMatricula(string xmlIn, string token, string hash)
+		{
+			string fileName;
+			if(!XmlToInfoMatriculaFile.TryGetValue(RemoveWhitespace(xmlIn), out fileName))
+			{
+				fileName = "multasInfoMatriculaNotFound.xml";
+			}
+			string result = GetFromFile(token, hash, fileName);
+			return result;
+		}
 
 
-
-
+		private string RemoveWhitespace(string s)
+		{
+			StringBuilder sb = new StringBuilder();
+			for (int i = 0; i < s.Length; i++)
+			{
+				char c = s[i];
+				if(!Char.IsWhiteSpace(c))
+				{
+					sb.Append(c);
+				}
+			}
+			string result = sb.ToString();
+			return result;
+		}
+		private string GetFromFile(string token, string hash, string fileName)
+		{
+			string result = string.Empty;
+			string serverHash;
+			if (TokenToHash.TryGetValue(token, out serverHash) && serverHash == hash)
+			{
+				result = ReadFile(XmlPath, fileName);
+			}
+			else
+			{
+				result = "<XML><ERROR><DESCRIPTION>ERROR: Error de Seguridad. No se ha podido encontar el algoritmo de seguridad.Error de Seguridad. No se ha podido validar el usuario</DESCRIPTION><TYPE>E</TYPE></ERROR></XML>";
+			}
+			return result;
+		}
 		private static bool CheckLogin(string token, string hash)
 		{
 			string storedHash;
@@ -321,5 +361,23 @@ namespace EchoRequest.Services
 			}
 		}
 		private static Dictionary<string, string> _FineIdToDetail;
+
+		public static Dictionary<string, string> XmlToInfoMatriculaFile
+		{
+			[System.Diagnostics.DebuggerStepThrough()]
+			get
+			{
+				if (_XmlToInfoMatricula == null)
+				{
+					_XmlToInfoMatricula = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
+					_XmlToInfoMatricula["<XML><MATPROV>B</MATPROV><MATCODIGO>3500</MATCODIGO><MATLETRA>FU</MATLETRA><MATEXTRA></MATEXTRA><FECINFRA></FECINFRA></XML>"] = 
+						"multasInfoMatriculaB3500FU.xml";
+					_XmlToInfoMatricula["<XML><MATPROV></MATPROV><MATCODIGO>1743</MATCODIGO><MATLETRA>DSA</MATLETRA><MATEXTRA></MATEXTRA><FECINFRA></FECINFRA></XML>"] =
+						"multasInfoMatricula1743DSA.xml";
+				}
+				return _XmlToInfoMatricula;
+			}
+		}
+		private static Dictionary<string, string> _XmlToInfoMatricula;
 	}
 }

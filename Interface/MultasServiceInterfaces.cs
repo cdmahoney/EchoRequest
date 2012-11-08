@@ -50,10 +50,10 @@ namespace EchoRequest.Interface {
 		string getInfraccionXml(string token, string hash);
         
         /// <remarks/>
-        //[System.Web.Services.WebMethodAttribute()]
-		//[System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://impl.multas.gtwin.conecta", ResponseNamespace="http://impl.multas.gtwin.conecta", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-		//[return: System.Xml.Serialization.XmlElementAttribute("getInfoFromMatriculaReturn")]
-		//string getInfoFromMatricula(string xmlIn, string token, string hash);
+		[System.Web.Services.WebMethodAttribute()]
+		[System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://impl.multas.gtwin.conecta/getInfoFromMatricula", RequestNamespace = "http://impl.multas.gtwin.conecta", ResponseNamespace = "http://impl.multas.gtwin.conecta", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+		[return: System.Xml.Serialization.XmlElementAttribute("getInfoFromMatriculaReturn")]
+		string getInfoFromMatricula(string xmlIn, string token, string hash);
         
         /// <remarks/>
         [System.Web.Services.WebMethodAttribute()]

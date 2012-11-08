@@ -84,7 +84,10 @@
     <Content Include="Services\Multas.asmx" />
     <Content Include="Xml\multasAgente.xml" />
     <Content Include="Xml\multasEnCalidadDe.xml" />
+    <Content Include="Xml\multasInfoMatricula1743DSA.xml" />
     <Content Include="Xml\multasGruas.xml" />
+    <Content Include="Xml\multasInfoMatriculaB3500FU.xml" />
+    <Content Include="Xml\multasInfoMatriculaNotFound.xml" />
     <Content Include="Xml\multasInfraccionXml.xml" />
     <Content Include="Xml\multasInstrumentoMedida.xml" />
     <Content Include="Xml\multasMarcas.xml" />
