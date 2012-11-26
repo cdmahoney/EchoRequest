@@ -297,7 +297,7 @@ namespace EchoRequest.Services
 			bool result = TokenToHash.TryGetValue(token, out storedHash) && hash == storedHash;
 			return result;
 		}
-		private static string ReadFile(string path, string name)
+		/*private*/public static string ReadFile(string path, string name)
 		{
 			string fullPath = Path.Combine(path, name);
 			fullPath = HttpContext.Current.Server.MapPath(fullPath);

@@ -69,9 +69,14 @@
       <DependentUpon>GeoLocation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interface\MultasServiceInterfaces.cs" />
+    <Compile Include="Interface\TAOWebServiceServiceInterfaces.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Multas.asmx.cs">
       <DependentUpon>Multas.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\TaoWebService.asmx.cs">
+      <DependentUpon>TaoWebService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
@@ -82,7 +87,11 @@
     <Content Include="App_Data\AppConfig.json" />
     <Content Include="GeoLocation.aspx" />
     <Content Include="Services\Multas.asmx" />
+    <Content Include="Services\TaoWebService.asmx" />
+    <Content Include="Xml\dgtSolicitudMatricula.xml" />
     <Content Include="Xml\multasAgente.xml" />
+    <Content Include="Xml\multasBrowseExp.xml" />
+    <Content Include="Xml\multasDetail.xml" />
     <Content Include="Xml\multasEnCalidadDe.xml" />
     <Content Include="Xml\multasInfoMatricula1743DSA.xml" />
     <Content Include="Xml\multasGruas.xml" />
@@ -95,6 +104,9 @@
     <Content Include="Xml\multasStreet.xml" />
     <Content Include="Xml\multasTipoVehiculos.xml" />
     <Content Include="Xml\multasUltimaSincronizacionByEntity.xml" />
+    <Content Include="Xml\taoLogin.xml" />
+    <Content Include="Xml\taoMultasLogin.xml" />
+    <Content Include="Xml\taoMultasUltimaSincronizacion.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="js\" />

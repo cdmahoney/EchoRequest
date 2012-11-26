@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<taoServiceResponse>
+	<data xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;?xml version='1.0' encoding='UTF-8' ?&gt;&lt;MultasServices&gt;&lt;login&gt;&lt;Response&gt;&lt;TOKEN&gt;50000000000000000120121126212921&lt;/TOKEN&gt;&lt;FECHASISTEMA&gt;20121126092921&lt;/FECHASISTEMA&gt;&lt;ENTITY&gt;100100300001409600100&lt;/ENTITY&gt;&lt;MULAGENTE&gt;1&lt;/MULAGENTE&gt;&lt;C60M3ORDCODE&gt;0&lt;/C60M3ORDCODE&gt;&lt;CODE&gt;AYGTWIN&lt;/CODE&gt;&lt;ORDCODE&gt;0&lt;/ORDCODE&gt;&lt;/Response&gt;&lt;/login&gt;&lt;/MultasServices&gt;</data>
+	<type>JAXB</type>
+	<resultCode>OK</resultCode>
+	<resultMessage></resultMessage>
+	<idConecta>0740304200435034709900</idConecta>
+</taoServiceResponse>

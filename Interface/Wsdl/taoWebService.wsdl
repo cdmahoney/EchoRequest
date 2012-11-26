@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions targetNamespace="http://generic.services.conecta.es" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://generic.services.conecta.es" xmlns:intf="http://generic.services.conecta.es" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+	<wsdl:types>
+		<schema elementFormDefault="qualified" targetNamespace="http://generic.services.conecta.es" xmlns="http://www.w3.org/2001/XMLSchema">
+			<element name="login">
+				<complexType>
+					<sequence>
+						<element name="user" type="xsd:string"/>
+						<element name="password" type="xsd:string"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="loginResponse">
+				<complexType>
+					<sequence>
+						<element name="loginReturn" type="xsd:string"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="doOperationTAO">
+				<complexType>
+					<sequence>
+						<element name="xmlIn" type="xsd:string"/>
+						<element name="token" type="xsd:string"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="doOperationTAOResponse">
+				<complexType>
+					<sequence>
+						<element name="doOperationTAOReturn" type="xsd:string"/>
+					</sequence>
+				</complexType>
+			</element>
+		</schema>
+	</wsdl:types>
+
+	<wsdl:message name="loginRequest">
+
+		<wsdl:part element="impl:login" name="parameters"/>
+
+	</wsdl:message>
+
+	<wsdl:message name="loginResponse">
+
+		<wsdl:part element="impl:loginResponse" name="parameters"/>
+
+	</wsdl:message>
+
+	<wsdl:message name="doOperationTAORequest">
+
+		<wsdl:part element="impl:doOperationTAO" name="parameters"/>
+
+	</wsdl:message>
+
+	<wsdl:message name="doOperationTAOResponse">
+
+		<wsdl:part element="impl:doOperationTAOResponse" name="parameters"/>
+
+	</wsdl:message>
+
+	<wsdl:portType name="TAOWebService">
+
+		<wsdl:operation name="login">
+
+			<wsdl:input message="impl:loginRequest" name="loginRequest"/>
+
+			<wsdl:output message="impl:loginResponse" name="loginResponse"/>
+
+		</wsdl:operation>
+
+		<wsdl:operation name="doOperationTAO">
+
+			<wsdl:input message="impl:doOperationTAORequest" name="doOperationTAORequest"/>
+
+			<wsdl:output message="impl:doOperationTAOResponse" name="doOperationTAOResponse"/>
+
+		</wsdl:operation>
+
+	</wsdl:portType>
+
+	<wsdl:binding name="TAOWebServiceSoapBinding" type="impl:TAOWebService">
+
+		<wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+		<wsdl:operation name="login">
+
+			<wsdlsoap:operation soapAction=""/>
+
+			<wsdl:input name="loginRequest">
+
+				<wsdlsoap:body use="literal"/>
+
+			</wsdl:input>
+
+			<wsdl:output name="loginResponse">
+
+				<wsdlsoap:body use="literal"/>
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+		<wsdl:operation name="doOperationTAO">
+
+			<wsdlsoap:operation soapAction=""/>
+
+			<wsdl:input name="doOperationTAORequest">
+
+				<wsdlsoap:body use="literal"/>
+
+			</wsdl:input>
+
+			<wsdl:output name="doOperationTAOResponse">
+
+				<wsdlsoap:body use="literal"/>
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+	</wsdl:binding>
+
+	<wsdl:service name="TAOWebServiceService">
+
+		<wsdl:port binding="impl:TAOWebServiceSoapBinding" name="TAOWebService">
+
+			<wsdlsoap:address location="http://10.49.95.109:8080/conecta10/services/TAOWebService"/>
+
+		</wsdl:port>
+
+	</wsdl:service>
+
+</wsdl:definitions>
