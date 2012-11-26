@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<taoServiceResponse>
+	<data xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;?xml version='1.0' encoding='UTF-8' ?&gt;&lt;MultasServices&gt;&lt;Agente&gt;&lt;Response&gt;&lt;MULAGENTE&gt;&lt;AGECODAGE&gt;1&lt;/AGECODAGE&gt;&lt;AGENOMCOM&gt;GARCIA GONZALEZ AMADOR&lt;/AGENOMCOM&gt;&lt;/MULAGENTE&gt;&lt;MULAGENTE&gt;&lt;AGECODAGE&gt;2&lt;/AGECODAGE&gt;&lt;AGENOMCOM&gt;SABROSO VAZQUEZ PEDRO&lt;/AGENOMCOM&gt;&lt;/MULAGENTE&gt;&lt;MULAGENTE&gt;&lt;AGECODAGE&gt;3&lt;/AGECODAGE&gt;&lt;AGENOMCOM&gt;GUARDIA ALOBERA MERCEDES&lt;/AGENOMCOM&gt;&lt;/MULAGENTE&gt;&lt;MULAGENTE&gt;&lt;AGECODAGE&gt;4&lt;/AGECODAGE&gt;&lt;AGENOMCOM&gt;MIRO HERNANDEZ ANTONIO&lt;/AGENOMCOM&gt;&lt;/MULAGENTE&gt;&lt;MULAGENTE&gt;&lt;AGECODAGE&gt;6&lt;/AGECODAGE&gt;&lt;AGENOMCOM&gt;123456789&lt;/AGENOMCOM&gt;&lt;/MULAGENTE&gt;&lt;MULAGENTE&gt;&lt;AGECODAGE&gt;7&lt;/AGECODAGE&gt;&lt;AGENOMCOM&gt;112233445566778899&lt;/AGENOMCOM&gt;&lt;/MULAGENTE&gt;&lt;/Response&gt;&lt;/Agente&gt;&lt;/MultasServices&gt;</data>
+	<type>JAXB</type>
+	<resultCode>OK</resultCode>
+	<resultMessage></resultMessage>
+	<idConecta>0740304200429358709900</idConecta>
+</taoServiceResponse>

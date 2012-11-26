@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<taoServiceResponse>
+	<data xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;?xml version='1.0' encoding='UTF-8' ?&gt;&lt;MultasServices&gt;&lt;TipoVehiculos&gt;&lt;Response&gt;&lt;VALSETIVTMTIPO&gt;&lt;VALUECODE&gt;1&lt;/VALUECODE&gt;&lt;VALUEDESC&gt;TURISMO&lt;/VALUEDESC&gt;&lt;/VALSETIVTMTIPO&gt;&lt;VALSETIVTMTIPO&gt;&lt;VALUECODE&gt;2&lt;/VALUECODE&gt;&lt;VALUEDESC&gt;AUTOBUS&lt;/VALUEDESC&gt;&lt;/VALSETIVTMTIPO&gt;&lt;VALSETIVTMTIPO&gt;&lt;VALUECODE&gt;3&lt;/VALUECODE&gt;&lt;VALUEDESC&gt;CAMION&lt;/VALUEDESC&gt;&lt;/VALSETIVTMTIPO&gt;&lt;VALSETIVTMTIPO&gt;&lt;VALUECODE&gt;4&lt;/VALUECODE&gt;&lt;VALUEDESC&gt;TRACTOR&lt;/VALUEDESC&gt;&lt;/VALSETIVTMTIPO&gt;&lt;VALSETIVTMTIPO&gt;&lt;VALUECODE&gt;5&lt;/VALUECODE&gt;&lt;VALUEDESC&gt;REMOLQUE&lt;/VALUEDESC&gt;&lt;/VALSETIVTMTIPO&gt;&lt;VALSETIVTMTIPO&gt;&lt;VALUECODE&gt;6&lt;/VALUECODE&gt;&lt;VALUEDESC&gt;CICLOMOTOR&lt;/VALUEDESC&gt;&lt;/VALSETIVTMTIPO&gt;&lt;VALSETIVTMTIPO&gt;&lt;VALUECODE&gt;7&lt;/VALUECODE&gt;&lt;VALUEDESC&gt;MOTOCICLETA&lt;/VALUEDESC&gt;&lt;/VALSETIVTMTIPO&gt;&lt;/Response&gt;&lt;/TipoVehiculos&gt;&lt;/MultasServices&gt;</data>
+	<type>JAXB</type>
+	<resultCode>OK</resultCode>
+	<resultMessage></resultMessage>
+	<idConecta>0740304200429363709900</idConecta>
+</taoServiceResponse>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<taoServiceResponse>
+	<data xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;?xml version='1.0' encoding='UTF-8' ?&gt;&lt;MultasServices&gt;&lt;Streets&gt;&lt;Response&gt; &lt;ERROR&gt; &lt;CODE&gt;7&lt;/CODE&gt; &lt;DESCRIPTION&gt;Este identificador no ésta asociado a ningún agente&lt;/DESCRIPTION&gt; &lt;TYPE&gt;E&lt;/TYPE&gt; &lt;/ERROR&gt; &lt;/Response&gt;&lt;/Streets&gt;&lt;/MultasServices&gt;</data>
+	<type>JAXB</type>
+	<resultCode>OK</resultCode>
+	<resultMessage></resultMessage>
+	<idConecta>0740304200429362709900</idConecta>
+</taoServiceResponse>
