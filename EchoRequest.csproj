@@ -106,6 +106,7 @@
     <Content Include="Xml\multasUltimaSincronizacionByEntity.xml" />
     <Content Include="Xml\taoLogin.xml" />
     <Content Include="Xml\taoMultasAgente.xml" />
+    <Content Include="Xml\taoMultasEnCalidadDe.xml" />
     <Content Include="Xml\taoMultasGrua.xml" />
     <Content Include="Xml\taoMultasInfraccionXml.xml" />
     <Content Include="Xml\taoMultasInstrumentMedida.xml" />
