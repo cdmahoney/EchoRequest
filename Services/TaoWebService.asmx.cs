@@ -50,6 +50,21 @@ namespace EchoRequest.Services
 						}
 					}
 					break;
+				case "SolicitudMatricula":
+					{
+						string matricula = xmlData.SelectSingleNode("//matricula").InnerText;
+						string fileName = "taoMultasSolicitudMatricula" + matricula + ".xml";
+						if (Multas.FileExists(Multas.XmlPath, fileName))
+						{
+							result = GetFromFile(fileName);
+						}
+						else
+						{
+							// Pendiente - devolver estructura correcta para matricula no localizada
+							result = GetFromFile("taoMultasInfoFromMatriculaError.xml");
+						}
+					}
+					break;
 				default:
 					result = GetFromFile("taoMultas" + operation.InnerText + ".xml");
 					break;
