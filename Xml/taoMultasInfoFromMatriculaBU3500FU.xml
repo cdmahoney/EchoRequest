@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<taoServiceResponse>
+	<data xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;?xml version='1.0' encoding='UTF-8' ?&gt;&lt;MultasServices&gt;&lt;InfoFromMatricula&gt;&lt;Response&gt;&lt;PERSON&gt;&lt;VATACRONYM&gt;&lt;/VATACRONYM&gt;&lt;IDNUMBER&gt;29347653&lt;/IDNUMBER&gt;&lt;CTRLDIGIT&gt; &lt;/CTRLDIGIT&gt;&lt;FULLNAME&gt;ROMERO OCHOA ANTONIO&lt;/FULLNAME&gt;&lt;/PERSON&gt;&lt;ADDRESS&gt;&lt;FULLADDRESS&gt;SEVILLA 3&lt;/FULLADDRESS&gt;&lt;/ADDRESS&gt;&lt;VEHICLE&gt;&lt;VEHMATRICULA&gt;B -3500  -FU &lt;/VEHMATRICULA&gt;&lt;VEHTYPE&gt;1&lt;/VEHTYPE&gt;&lt;VEHCOLOR&gt;&lt;/VEHCOLOR&gt;&lt;VEHMARCACODE&gt;2&lt;/VEHMARCACODE&gt;&lt;VEHMARCADESC&gt;RENAULT&lt;/VEHMARCADESC&gt;&lt;VEHMODELO&gt;R-6 GTL&lt;/VEHMODELO&gt;&lt;/VEHICLE&gt;&lt;/Response&gt;&lt;/InfoFromMatricula&gt;&lt;/MultasServices&gt;</data>
+	<type>JAXB</type>
+	<resultCode>OK</resultCode>
+	<resultMessage></resultMessage>
+	<idConecta>0740304200435218709900</idConecta>
+</taoServiceResponse>

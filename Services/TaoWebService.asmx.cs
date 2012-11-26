@@ -29,17 +29,31 @@ namespace EchoRequest.Services
 			xmldoc.LoadXml(xmlIn);
 			XmlNode operation = xmldoc.SelectSingleNode("//operationName");
 			XmlNode data = xmldoc.SelectSingleNode("//data");
+			XmlDocument xmlData = new XmlDocument();
+			xmlData.LoadXml(data.InnerText);
 
-			result = GetFromFile("taoMultas" + operation.InnerText + ".xml");
-			//switch (operation.InnerText)
-			//{
-			//    case "login":
-			//        result = GetFromFile("taoMultasLogin.xml");
-			//        break;
-			//    case "UltimaSincronizacion":
-			//        result = GetFromFile("taoMultasUltimaSincronizacion.xml");
-			//        break;
-			//}
+			switch (operation.InnerText)
+			{
+				case "InfoFromMatricula":
+					{
+						string matricula = xmlData.SelectSingleNode("//MATPROV").InnerText +
+							xmlData.SelectSingleNode("//MATCODIGO").InnerText +
+							xmlData.SelectSingleNode("//MATLETRA").InnerText;
+						string fileName = "taoMultasInfoFromMatricula" + matricula + ".xml";
+						if (Multas.FileExists(Multas.XmlPath, fileName))
+						{
+							result = GetFromFile(fileName);
+						}
+						else
+						{
+							result = GetFromFile("taoMultasInfoFromMatriculaError.xml");
+						}
+					}
+					break;
+				default:
+					result = GetFromFile("taoMultas" + operation.InnerText + ".xml");
+					break;
+			}
 
 			return result;
 		}

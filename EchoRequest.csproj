@@ -109,6 +109,8 @@
     <Content Include="Xml\taoMultasEnCalidadDe.xml" />
     <Content Include="Xml\taoMultasGrua.xml" />
     <Content Include="Xml\taoMultasGruas.xml" />
+    <Content Include="Xml\taoMultasInfoFromMatriculaBU3500FU.xml" />
+    <Content Include="Xml\taoMultasInfoFromMatriculaError.xml" />
     <Content Include="Xml\taoMultasInfraccionXml.xml" />
     <Content Include="Xml\taoMultasInstrumentMedida.xml" />
     <Content Include="Xml\taoMultasInstrumentoMedida.xml" />

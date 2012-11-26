@@ -304,6 +304,13 @@ namespace EchoRequest.Services
 			string result = File.ReadAllText(fullPath);
 			return result;
 		}
+		public static bool FileExists(string path, string name)
+		{
+			string fullPath = Path.Combine(path, name);
+			fullPath = HttpContext.Current.Server.MapPath(fullPath);
+			bool result = File.Exists(fullPath);
+			return result;
+		}
 		public static string XmlPath { [System.Diagnostics.DebuggerStepThrough()] get { return "..\\Xml"; } }
 		public static Dictionary<string, string> UserToPassword
 		{

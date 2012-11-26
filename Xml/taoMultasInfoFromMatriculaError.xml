@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<taoServiceResponse>
+	<data xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;?xml version='1.0' encoding='UTF-8' ?&gt;&lt;MultasServices&gt;&lt;InfoFromMatricula&gt;&lt;Response&gt; &lt;ERROR&gt; &lt;CODE&gt;46&lt;/CODE&gt; &lt;DESCRIPTION&gt;No se ha encontrado información para esta matrícula&lt;/DESCRIPTION&gt; &lt;TYPE&gt;W&lt;/TYPE&gt; &lt;/ERROR&gt; &lt;/Response&gt;&lt;/InfoFromMatricula&gt;&lt;/MultasServices&gt;</data>
+	<type>JAXB</type>
+	<resultCode>OK</resultCode>
+	<resultMessage></resultMessage>
+	<idConecta>0740304200435194709900</idConecta>
+</taoServiceResponse>
+
