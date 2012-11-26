@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<taoServiceResponse>
+	<data xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;?xml version='1.0' encoding='UTF-8' ?&gt;&lt;MultasServices&gt;&lt;MotivosNoNotificacion&gt;&lt;Response&gt;&lt;MULNONOTI&gt;&lt;NONCODNON&gt;1&lt;/NONCODNON&gt;&lt;NONDESNON&gt;Conductor ausente&lt;/NONDESNON&gt;&lt;/MULNONOTI&gt;&lt;MULNONOTI&gt;&lt;NONCODNON&gt;2&lt;/NONCODNON&gt;&lt;NONDESNON&gt;No entropecer la fluidez del tráfico&lt;/NONDESNON&gt;&lt;/MULNONOTI&gt;&lt;MULNONOTI&gt;&lt;NONCODNON&gt;3&lt;/NONCODNON&gt;&lt;NONDESNON&gt;Carecer de vehículo para seguimiento&lt;/NONDESNON&gt;&lt;/MULNONOTI&gt;&lt;MULNONOTI&gt;&lt;NONCODNON&gt;4&lt;/NONCODNON&gt;&lt;NONDESNON&gt;Agente en acto de regulacion de trafico&lt;/NONDESNON&gt;&lt;/MULNONOTI&gt;&lt;MULNONOTI&gt;&lt;NONCODNON&gt;5&lt;/NONCODNON&gt;&lt;NONDESNON&gt;Desobedecer la indicación de detención&lt;/NONDESNON&gt;&lt;/MULNONOTI&gt;&lt;/Response&gt;&lt;/MotivosNoNotificacion&gt;&lt;/MultasServices&gt;</data>
+	<type>JAXB</type>
+	<resultCode>OK</resultCode>
+	<resultMessage></resultMessage>
+	<idConecta>0740304200435152709900</idConecta>
+</taoServiceResponse>

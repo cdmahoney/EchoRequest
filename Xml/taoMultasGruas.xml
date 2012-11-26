@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<taoServiceResponse>
+	<data xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;?xml version='1.0' encoding='UTF-8' ?&gt;&lt;MultasServices&gt;&lt;Gruas&gt;&lt;Response&gt;&lt;MULIDGRUA&gt;&lt;GRUCODGRU&gt;2&lt;/GRUCODGRU&gt;&lt;GRUDESGRU&gt;Grua Municipal pequeño&lt;/GRUDESGRU&gt;&lt;/MULIDGRUA&gt;&lt;/Response&gt;&lt;/Gruas&gt;&lt;/MultasServices&gt;</data>
+	<type>JAXB</type>
+	<resultCode>OK</resultCode>
+	<resultMessage></resultMessage>
+	<idConecta>0740304200435154209900</idConecta>
+</taoServiceResponse>
