@@ -86,6 +86,7 @@
   <ItemGroup>
     <Content Include="App_Data\AppConfig.json" />
     <Content Include="GeoLocation.aspx" />
+    <Content Include="Img\CBTemp.png" />
     <Content Include="Services\Multas.asmx" />
     <Content Include="Services\TaoWebService.asmx" />
     <Content Include="Xml\dgtSolicitudMatricula.xml" />
