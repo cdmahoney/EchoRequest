@@ -207,6 +207,21 @@ namespace EchoRequest.Services
 		}
 		/// <remarks/>
 		[System.Web.Services.WebMethodAttribute()]
+		public string getPerson(string dni, string token, string hash)
+		{
+			string result = string.Empty;
+			if (TokenToHash[token] == hash)
+			{
+				result = ReadFile(XmlPath, "multasPerson.xml");
+			}
+			else
+			{
+				result = "<XML><ERROR><DESCRIPTION>ERROR: Error de Seguridad. No se ha podido encontar el algoritmo de seguridad.Error de Seguridad. No se ha podido validar el usuario</DESCRIPTION><TYPE>E</TYPE></ERROR></XML>";
+			}
+			return result;
+		}
+		/// <remarks/>
+		[System.Web.Services.WebMethodAttribute()]
 		public string getMarcas(string token, string hash)
 		{
 			string result = string.Empty;

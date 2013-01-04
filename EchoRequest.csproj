@@ -94,6 +94,7 @@
     <Content Include="Xml\multasBrowseExp.xml" />
     <Content Include="Xml\multasDetail.xml" />
     <Content Include="Xml\multasEnCalidadDe.xml" />
+    <Content Include="Xml\multasPerson.xml" />
     <Content Include="Xml\multasInfoMatricula1743DSA.xml" />
     <Content Include="Xml\multasGruas.xml" />
     <Content Include="Xml\multasInfoMatriculaB3500FU.xml" />
@@ -110,6 +111,7 @@
     <Content Include="Xml\taoMultasAgente.xml" />
     <Content Include="Xml\taoMultasBrowseExp.xml" />
     <Content Include="Xml\taoMultasEnCalidadDe.xml" />
+    <Content Include="Xml\taoMultasPerson.xml" />
     <Content Include="Xml\taoMultasGrua.xml" />
     <Content Include="Xml\taoMultasGruas.xml" />
     <Content Include="Xml\taoMultasInfoFromMatriculaB3500FU.xml" />

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<taoServiceResponse>
+	<data xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;?xml version='1.0' encoding='UTF-8' ?&gt;&lt;MultasServices&gt;&lt;Person&gt;&lt;Response&gt;&lt;PERSON&gt;&lt;DBOID&gt;2000404200044763009900&lt;/DBOID&gt;&lt;VATACRONYM&gt;AG&lt;/VATACRONYM&gt;&lt;IDNUMBER&gt;X1935144Q&lt;/IDNUMBER&gt;&lt;CTRLDIGIT&gt; &lt;/CTRLDIGIT&gt;&lt;FULLNAME&gt;ARBI ABEIDI MOHAMED&lt;/FULLNAME&gt;&lt;DEFADDRESS&gt;100900000045805300100&lt;/DEFADDRESS&gt;&lt;/PERSON&gt;&lt;ADDRESS&gt;&lt;DBOID&gt;100900000045805300100&lt;/DBOID&gt;&lt;FULLADDRESS&gt;PADHAB:PZ CERVANTES,    2 2º A  BARRIO SANTA CATALINA - 28801 ALCALA DE HENARES (MADRID)&lt;/FULLADDRESS&gt;&lt;/ADDRESS&gt;&lt;ADDRESS&gt;&lt;DBOID&gt;100900000048977100100&lt;/DBOID&gt;&lt;FULLADDRESS&gt;FISCAL:CL VIA COMPLUTENSE,   42 1º 3ª  BARRIO DE LA COMPLUTENSE - 28805 ALCALA DE HENARES (MADRID)&lt;/FULLADDRESS&gt;&lt;/ADDRESS&gt;&lt;ADDRESS&gt;&lt;DBOID&gt;100904200044762809900&lt;/DBOID&gt;&lt;FULLADDRESS&gt;PADHAB:CL ROJAS ZORRILLA,    8 2º D  BARRIO DE LA COMPLUTENSE - 28805 ALCALA DE HENARES (MADRID)&lt;/FULLADDRESS&gt;&lt;/ADDRESS&gt;&lt;/Response&gt;&lt;/Person&gt;&lt;/MultasServices&gt;</data>
+	<type>JAXB</type>
+	<resultCode>OK</resultCode>
+	<resultMessage></resultMessage>
+	<idConecta>0740304200443281209900</idConecta>
+</taoServiceResponse>
