@@ -104,6 +104,7 @@
     <Content Include="Xml\multasMarcas.xml" />
     <Content Include="Xml\multasMotivosNoNotificacion.xml" />
     <Content Include="Xml\multasRangosVelocidad.xml" />
+    <Content Include="Xml\multasSaveMulta.xml" />
     <Content Include="Xml\multasStreet.xml" />
     <Content Include="Xml\multasTipoVehiculos.xml" />
     <Content Include="Xml\multasUltimaSincronizacionByEntity.xml" />
@@ -124,6 +125,7 @@
     <Content Include="Xml\taoMultasMarcas.xml" />
     <Content Include="Xml\taoMultasMotivosNoNotificacion.xml" />
     <Content Include="Xml\taoMultasRangosVelocidad.xml" />
+    <Content Include="Xml\taoMultasSaveMulta.xml" />
     <Content Include="Xml\taoMultasSolicitudMatricula8887CJY.xml" />
     <Content Include="Xml\taoMultasStreets.xml" />
     <Content Include="Xml\taoMultasTipoVehiculos.xml" />

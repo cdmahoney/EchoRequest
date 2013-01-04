@@ -88,7 +88,21 @@ namespace EchoRequest.Services
 			}
 			return result;
 		}
-
+		/// <remarks/>
+		[System.Web.Services.WebMethodAttribute()]
+		public string saveMulta(string xmlIn, string token, string hash)
+		{
+			string result = string.Empty;
+			if (TokenToHash[token] == hash)
+			{
+				result = ReadFile(XmlPath, "multasSaveMulta.xml");
+			}
+			else
+			{
+				result = "<XML><ERROR><DESCRIPTION>ERROR: Error de Seguridad. No se ha podido encontar el algoritmo de seguridad.Error de Seguridad. No se ha podido validar el usuario</DESCRIPTION><TYPE>E</TYPE></ERROR></XML>";
+			}
+			return result;
+		}
 		[WebMethod]
 		public string getBrowseExp(string xmlIn, string token, string hash)
 		{

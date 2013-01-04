@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<taoServiceResponse>
+	<data xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;?xml version='1.0' encoding='UTF-8' ?&gt;&lt;MultasServices&gt;&lt;saveMulta&gt;&lt;Response&gt;&lt;MULIDEBOL&gt;2013-Z-00000299&lt;/MULIDEBOL&gt;&lt;MULFECINF&gt;20130104101647&lt;/MULFECINF&gt;&lt;C60YEAR&gt;2013&lt;/C60YEAR&gt;&lt;C60REF&gt;000000029978&lt;/C60REF&gt;&lt;C60CODE&gt;095&lt;/C60CODE&gt;&lt;C60REM&gt;1&lt;/C60REM&gt;&lt;C60LIMITDATE&gt;20130121&lt;/C60LIMITDATE&gt;&lt;C60AMOUNT&gt;100.0&lt;/C60AMOUNT&gt;&lt;C60ORDCODE&gt;0&lt;/C60ORDCODE&gt;&lt;C60METHOD&gt;2&lt;/C60METHOD&gt;&lt;/Response&gt;&lt;/saveMulta&gt;&lt;/MultasServices&gt;</data>
+	<type>JAXB</type>
+	<resultCode>OK</resultCode>
+	<resultMessage></resultMessage>
+	<idConecta>0740304200443087209900</idConecta>
+</taoServiceResponse>
