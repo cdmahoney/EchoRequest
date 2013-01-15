@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:intf="http://impl.transac.gtwin.conecta" xmlns:impl="http://impl.transac.gtwin.conecta" targetNamespace="http://impl.transac.gtwin.conecta" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://impl.transac.gtwin.conecta">
+      <xsd:element name="createAsyncCall">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="xmlIn" type="xsd:string" />
+            <xsd:element name="operacion" type="xsd:string" />
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="hash" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createAsyncCallResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="createAsyncCallReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="consultaExcallbyDboid">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="dboid" type="xsd:string" />
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="hash" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="consultaExcallbyDboidResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="consultaExcallbyDboidReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="consultaExcallbyDboidResponse">
+    <wsdl:part name="parameters" element="impl:consultaExcallbyDboidResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultaExcallbyDboidRequest">
+    <wsdl:part name="parameters" element="impl:consultaExcallbyDboid" />
+  </wsdl:message>
+  <wsdl:message name="createAsyncCallRequest">
+    <wsdl:part name="parameters" element="impl:createAsyncCall" />
+  </wsdl:message>
+  <wsdl:message name="createAsyncCallResponse">
+    <wsdl:part name="parameters" element="impl:createAsyncCallResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSTransac">
+    <wsdl:operation name="createAsyncCall">
+      <wsdl:input name="createAsyncCallRequest" message="impl:createAsyncCallRequest" />
+      <wsdl:output name="createAsyncCallResponse" message="impl:createAsyncCallResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="consultaExcallbyDboid">
+      <wsdl:input name="consultaExcallbyDboidRequest" message="impl:consultaExcallbyDboidRequest" />
+      <wsdl:output name="consultaExcallbyDboidResponse" message="impl:consultaExcallbyDboidResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSTransacSoapBinding" type="impl:WSTransac">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="createAsyncCall">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createAsyncCallRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="createAsyncCallResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultaExcallbyDboid">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultaExcallbyDboidRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="consultaExcallbyDboidResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSTransacService">
+    <wsdl:port name="WSTransac" binding="impl:WSTransacSoapBinding">
+      <wsdlsoap:address location="http://10.49.95.109:8080/conecta10/services/WSTransac" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
