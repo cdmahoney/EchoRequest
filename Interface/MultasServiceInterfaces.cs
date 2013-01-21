@@ -177,7 +177,7 @@ namespace EchoRequest.Interface {
 
 		/// <remarks/>
 		[System.Web.Services.WebMethodAttribute()]
-		[System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://impl.multas.gtwin.conecta/getRangosVelocidadReturn", RequestNamespace = "http://impl.multas.gtwin.conecta", ResponseNamespace = "http://impl.multas.gtwin.conecta", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+		[System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://impl.multas.gtwin.conecta/getRangosVelocidad", RequestNamespace = "http://impl.multas.gtwin.conecta", ResponseNamespace = "http://impl.multas.gtwin.conecta", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
 		[return: System.Xml.Serialization.XmlElementAttribute("getRangosVelocidadReturn")]
 		string getRangosVelocidad(string xmlIn, string token, string hash);
     }
