@@ -34,6 +34,21 @@ namespace EchoRequest.Services
 
 			switch (operation.InnerText)
 			{
+				case "Detail":
+					{
+						string boletin = xmlData.SelectSingleNode("//Request").InnerText;
+						string fileName = "taoMultasDetail" + boletin + ".xml";
+						if (Multas.FileExists(Multas.XmlPath, fileName))
+						{
+							result = GetFromFile(fileName);
+						}
+						else
+						{
+							// Pendiente - devolver estructura correcta para matricula no localizada
+							result = GetFromFile("taoMultasInfoFromMatriculaError.xml");
+						}
+					}
+					break;
 				case "InfoFromMatricula":
 					{
 						string matricula = xmlData.SelectSingleNode("//MATPROV").InnerText +

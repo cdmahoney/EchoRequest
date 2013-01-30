@@ -106,6 +106,8 @@
     <Content Include="Services\Multas.asmx" />
     <Content Include="Services\TaoWebService.asmx" />
     <Content Include="Services\WSTransac.asmx" />
+    <Content Include="Xml\taoMultasDetail2013-Z-00000476.xml" />
+    <Content Include="Xml\taoMultasDetail2013-Z-00000477.xml" />
     <Content Include="Xml\wstransacConsultaExcallbyDboid02.xml" />
     <Content Include="Xml\wstransacConsultaExcallbyDboid01.xml" />
     <Content Include="Xml\dgtSolicitudMatricula.xml" />
