@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<taoServiceResponse>
+	<data xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;?xml version='1.0' encoding='UTF-8' ?&gt;&lt;MultasServices&gt;&lt;anularMulta&gt;&lt;Response&gt;&lt;EXTCALL_DBOID&gt;0123504200451163209900&lt;/EXTCALL_DBOID&gt;&lt;/Response&gt;&lt;/anularMulta&gt;&lt;/MultasServices&gt;</data>
+	<type>JAXB</type>
+	<resultCode>OK</resultCode>
+	<resultMessage></resultMessage>
+	<idConecta>0740304200435237209900</idConecta>
+</taoServiceResponse>
