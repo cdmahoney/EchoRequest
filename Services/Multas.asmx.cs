@@ -308,16 +308,18 @@ namespace EchoRequest.Services
 		[System.Web.Services.WebMethodAttribute()]
 		public string anularMulta(string boletinId, string motivo, string token, string hash)
 		{
-			string result = string.Empty;
-			if (TokenToHash[token] == hash)
-			{
-				result = ReadFile(XmlPath, "multasAnular.xml");
-			}
-			else
-			{
-				result = "<XML><ERROR><DESCRIPTION>ERROR: Error de Seguridad. No se ha podido encontar el algoritmo de seguridad.Error de Seguridad. No se ha podido validar el usuario</DESCRIPTION><TYPE>E</TYPE></ERROR></XML>";
-			}
+			string result = GetFromFile(token, hash, "multasAnular.xml");
 			return result;
+			//string result = string.Empty;
+			//if (TokenToHash[token] == hash)
+			//{
+			//    result = ReadFile(XmlPath, "multasAnular.xml");
+			//}
+			//else
+			//{
+			//    result = "<XML><ERROR><DESCRIPTION>ERROR: Error de Seguridad. No se ha podido encontar el algoritmo de seguridad.Error de Seguridad. No se ha podido validar el usuario</DESCRIPTION><TYPE>E</TYPE></ERROR></XML>";
+			//}
+			//return result;
 		}
 
 
