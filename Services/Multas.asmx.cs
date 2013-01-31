@@ -305,6 +305,20 @@ namespace EchoRequest.Services
 			string result = GetFromFile(token, hash, fileName);
 			return result;
 		}
+		[System.Web.Services.WebMethodAttribute()]
+		public string anularMulta(string boletinId, string motivo, string token, string hash)
+		{
+			string result = string.Empty;
+			if (TokenToHash[token] == hash)
+			{
+				result = ReadFile(XmlPath, "multasRangosVelocidad.xml");
+			}
+			else
+			{
+				result = "<XML><ERROR><DESCRIPTION>ERROR: Error de Seguridad. No se ha podido encontar el algoritmo de seguridad.Error de Seguridad. No se ha podido validar el usuario</DESCRIPTION><TYPE>E</TYPE></ERROR></XML>";
+			}
+			return result;
+		}
 
 
 		private string RemoveWhitespace(string s)
