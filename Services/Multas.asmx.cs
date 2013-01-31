@@ -311,7 +311,7 @@ namespace EchoRequest.Services
 			string result = string.Empty;
 			if (TokenToHash[token] == hash)
 			{
-				result = ReadFile(XmlPath, "multasRangosVelocidad.xml");
+				result = ReadFile(XmlPath, "multasAnular.xml");
 			}
 			else
 			{
